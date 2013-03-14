@@ -40,5 +40,6 @@ if (Ti.version < 1.8 ) {
 	setTimeout(function() {
     new ApplicationTabGroup(Window).open();
 }, 5000);
+//test commit
 
 })();
