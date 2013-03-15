@@ -5,10 +5,20 @@ function ApplicationTabGroup(Window) {
 	//create app tabs
 	var win1 = new Window[0](L('home')),
 		win2 = new Window[1](L('settings'));
+		win3 = new Window[2](L('settings'));
+		win4 = new Window[3](L('settings'));
+	var winArray = [win1,win2,win3,win4];
+	var tabArrauy=[];
+	for(var value in winArray)
+	{
+		var tab = Ti.UI.createTab({
+		window: value
+		});
+		value.containingTab = tab;
+		tabArrauy.push(tab)
+	}
 	
 	var tab1 = Ti.UI.createTab({
-		title: L('home'),
-		icon: '/images/KS_nav_ui.png',
 		window: win1
 	});
 	win1.containingTab = tab1;
