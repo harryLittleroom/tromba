@@ -1,10 +1,8 @@
+var commonWindow = require('ui/handheld/ApplicationWindow');
+
 function ApplicationWindow(commonProperties) {
-	var self = Ti.UI.createWindow({
-		backgroundColor:'white'
-	});
-	
-	
-	
+	var self = new commonWindow('myTitle');
+
 	return self;
 };
 
