@@ -36,10 +36,10 @@ if (Ti.version < 1.8 ) {
 	}
 
 	var ApplicationTabGroup = require('ui/common/ApplicationTabGroup');
-	//new ApplicationTabGroup(Window).open();
-	setTimeout(function() {
-    new ApplicationTabGroup(Window).open();
-}, 5000);
+	new ApplicationTabGroup(Window).open();
+	// setTimeout(function() {
+    // new ApplicationTabGroup(Window).open();
+// }, 5000);
 //test commit
 //local commit
 //another local commit
