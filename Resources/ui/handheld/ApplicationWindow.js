@@ -12,17 +12,11 @@ function ApplicationWindow(title) {
 		top:0
 		});
 		
-	var bottomTabView = Titanium.UI.createView({
-		backgroundColor:'red',
-		width:bottomTabWidth,
-		height:50,
-		bottom:0,
-		left:0,
-		});
+	
 	for(var i=0;i<4;i++)
 	{
 		var bottomTabView = Titanium.UI.createView({
-		backgroundColor:'red',
+		backgroundImage:'/images/iphoneImage/bartenderBottomTab.png',
 		width:bottomTabWidth,
 		height:50,
 		bottom:0,
