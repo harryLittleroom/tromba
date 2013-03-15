@@ -1,6 +1,5 @@
-function ApplicationWindow(title) {
+function ApplicationWindow(commonProperties) {
 	var self = Ti.UI.createWindow({
-		title:title,
 		backgroundColor:'white'
 	});
 	

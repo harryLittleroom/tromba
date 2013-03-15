@@ -2,11 +2,13 @@ function ApplicationTabGroup(Window) {
 	//create module instance
 	var self = Ti.UI.createTabGroup();
 	
-	//create app tabs
-	var win1 = new Window[0](L('home')),
-		win2 = new Window[1](L('settings'));
-		win3 = new Window[2](L('settings'));
-		win4 = new Window[3](L('settings'));
+	var windowCommon ={
+		isHideTopBar:true
+	}
+	var win1 = new Window[0](windowCommon),
+		win2 = new Window[1](windowCommon);
+		win3 = new Window[2](windowCommon);
+		win4 = new Window[3](windowCommon);
 	var winArray = [win1,win2,win3,win4];
 	var tabArray=[];
 	for(var i=0;i<winArray.length;i++)
