@@ -28,15 +28,22 @@ if (Ti.version < 1.8 ) {
 	var isTablet = osname === 'ipad' || (osname === 'android' && (width > 899 || height > 899));
 	
 	var Window;
+	var windowArray;
 	if (isTablet) {
 		Window = require('ui/tablet/ApplicationWindow');
 	}
 	else {
-		Window = require('ui/handheld/ApplicationWindow');
+		Window1 = require('ui/handheld/bartendersWindow');
+		Window2 = require('ui/handheld/recommendWindow');
+		Window3 = require('ui/handheld/searchWindow');
+		Window4 = require('ui/handheld/storyWindow');
+		windowArray = [Window1,Window2,Window3,Window4]
+		
+		
 	}
 
 	var ApplicationTabGroup = require('ui/common/ApplicationTabGroup');
-	new ApplicationTabGroup(Window).open();
+	new ApplicationTabGroup(windowArray).open();
 	// setTimeout(function() {
     // new ApplicationTabGroup(Window).open();
 // }, 5000);

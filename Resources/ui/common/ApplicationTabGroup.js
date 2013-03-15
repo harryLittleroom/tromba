@@ -3,8 +3,8 @@ function ApplicationTabGroup(Window) {
 	var self = Ti.UI.createTabGroup();
 	
 	//create app tabs
-	var win1 = new Window(L('home')),
-		win2 = new Window(L('settings'));
+	var win1 = new Window[0](L('home')),
+		win2 = new Window[1](L('settings'));
 	
 	var tab1 = Ti.UI.createTab({
 		title: L('home'),
