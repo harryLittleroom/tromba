@@ -1,7 +1,7 @@
 var commonWindow = require('ui/handheld/ApplicationWindow');
 
 function bartendersWindow(commonProperties) {
-	var self = new commonWindow('myTitle');
+	var self = new commonWindow();
 
 	var bartenderImage = getImageByFileName('/images/iphoneImage/bartenderRow.jpg')
 
@@ -20,8 +20,18 @@ function bartendersWindow(commonProperties) {
 			backgroundImage : '/images/iphoneImage/bartenderRow.jpg',
 			width : platformWidth,
 			height : bartenderImage.height * platformWidth / bartenderImage.width,
-			top : bartenderImage.height * platformWidth / bartenderImage.width*i,
+			top : bartenderImage.height * platformWidth / bartenderImage.width * i,
 		});
+		view.addEventListener('click', function() {
+			Ti.API.log(self.tabGroup);
+			self.close();
+			var window = Titanium.UI.createWindow({
+				backgroundColor:"white"
+			});
+			window.open();
+			// var bartenderWindow = new commonWindow('myTitle');
+			// bartenderWindow.open();
+		})
 		scrollView.add(view);
 	}
 
