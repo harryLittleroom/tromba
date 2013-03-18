@@ -1,12 +1,11 @@
 Ti.include('/ui/common/common.js');
 
 function ApplicationWindow(title) {
-	
-	//var platformWidth = Titanium.Platform.displayCaps.platformWidth;
 	var bottomTabWidth=platformWidth/4;
 	var self = Ti.UI.createWindow({
 		navBarHidden:true,
 		tabBarHidden:true,
+		backgroundImage:'/images/iphoneImage/background.jpg'
 	});
 	var topBarView = Titanium.UI.createView({
 		backgroundImage:'/images/iphoneImage/topbar.png',
@@ -14,6 +13,7 @@ function ApplicationWindow(title) {
 		height:50,
 		top:0
 		});
+		self.add(topBarView);
 	var imageHeight = getImageByFileName("/images/iphoneImage/bartenderBottomTab.png").height;
 	var imageWidth = getImageByFileName("/images/iphoneImage/bartenderBottomTab.png").width;
 	
@@ -37,7 +37,7 @@ function ApplicationWindow(title) {
 		self.add(bottomTabView[i]);
 	}
 		
-	self.add(topBarView);
+	
 	
 	return self;
 };

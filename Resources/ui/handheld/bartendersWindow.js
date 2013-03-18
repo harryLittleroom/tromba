@@ -18,10 +18,6 @@ function bartendersWindow(commonProperties) {
 	});
 	self.add(button);
 	
-	
-	
-	//var tabGroup = win.tabGroup;
-	
 	return self;
 };
 
