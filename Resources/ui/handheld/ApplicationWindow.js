@@ -11,7 +11,8 @@ function ApplicationWindow(title) {
 		backgroundImage:'/images/iphoneImage/topbar.png',
 		width:platformWidth,
 		height:50,
-		top:0
+		top:0,
+		zIndex:10
 		});
 		self.add(topBarView);
 	var imageHeight = getImageByFileName("/images/iphoneImage/bartenderBottomTab.png").height;
@@ -31,7 +32,7 @@ function ApplicationWindow(title) {
 		index:i
 		});
 		bottomTabView[i].addEventListener('click',function(e){
-			Ti.API.log(self.tabGroup.tabs[e.source.index].active=true)
+			self.tabGroup.tabs[e.source.index].active=true;
 		})
 		self.add(bottomTabView[i]);
 	}
