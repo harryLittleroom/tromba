@@ -1,12 +1,9 @@
-var commonWindow = require('ui/handheld/ApplicationWindow');
+var commonWindow = require('ui/handheld/recommendWindow');
 
 
-function ApplicationWindow(commonProperties) {
+function recommendWindow() {
 	var self = new commonWindow('myTitle');
-	
-
-	
 	return self;
 };
 
-module.exports = ApplicationWindow;
+module.exports = recommendWindow;

@@ -1,6 +1,6 @@
-var commonWindow = require('ui/handheld/ApplicationWindow');
+var commonWindow = require('ui/handheld/searchWindow');
 
-function ApplicationWindow(commonProperties) {
+function searchWindow(commonProperties) {
 	var self = new commonWindow('myTitle');
 	
 
@@ -8,4 +8,4 @@ function ApplicationWindow(commonProperties) {
 	return self;
 };
 
-module.exports = ApplicationWindow;
+module.exports = searchWindow;

@@ -1,9 +1,9 @@
-var commonWindow = require('ui/handheld/ApplicationWindow');
+var commonWindow = require('ui/handheld/storyWindow');
 
-function ApplicationWindow(commonProperties) {
+function storyWindow(commonProperties) {
 	var self = new commonWindow('myTitle');
 
 	return self;
 };
 
-module.exports = ApplicationWindow;
+module.exports = storyWindow;

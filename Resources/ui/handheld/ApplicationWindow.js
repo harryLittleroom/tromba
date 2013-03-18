@@ -6,7 +6,7 @@ function ApplicationWindow(title) {
 		tabBarHidden:true,
 	});
 	var topBarView = Titanium.UI.createView({
-		backgroundColor:'red',
+		backgroundImage:'/images/iphoneImage/topbar.png',
 		width:platformWidth,
 		height:50,
 		top:0
@@ -16,7 +16,9 @@ function ApplicationWindow(title) {
 	var image = imageFile.read();
 	var imageHeight = image.height;
 	var imageWidth = image.width;
-	Ti.API.log(imageWidth)
+	
+	
+		
 	for(var i=0;i<4;i++)
 	{
 		var bottomTabView = Titanium.UI.createView({
