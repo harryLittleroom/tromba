@@ -31,7 +31,6 @@ function ApplicationWindow(title) {
 		index:i
 		});
 		bottomTabView[i].addEventListener('click',function(e){
-			Ti.API.log(e.source.indexArray);
 			Ti.API.log(self.tabGroup.tabs[e.source.index].active=true)
 		})
 		self.add(bottomTabView[i]);
