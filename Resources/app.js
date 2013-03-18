@@ -37,13 +37,12 @@ if (Ti.version < 1.8 ) {
 		Window2 = require('ui/handheld/recommendWindow');
 		Window3 = require('ui/handheld/searchWindow');
 		Window4 = require('ui/handheld/storyWindow');
-		windowArray = [Window1,Window2,Window3,Window4]
-		
-		
+		windowArray = [Window1,Window2,Window3,Window4]		
 	}
 
 	var ApplicationTabGroup = require('ui/common/ApplicationTabGroup');
 	new ApplicationTabGroup(windowArray).open();
+	
 	// setTimeout(function() {
     // new ApplicationTabGroup(Window).open();
 // }, 5000);

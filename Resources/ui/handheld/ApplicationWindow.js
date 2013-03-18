@@ -1,4 +1,5 @@
 function ApplicationWindow(title) {
+	
 	var platformWidth = Titanium.Platform.displayCaps.platformWidth;
 	var bottomTabWidth=platformWidth/4;
 	var self = Ti.UI.createWindow({

@@ -13,8 +13,15 @@ function bartendersWindow(commonProperties) {
 	button.addEventListener('click',function(e)
 	{
 	 	Ti.API.log('this is bartender window');
+	 	var win = Titanium.UI.currentWindow; 
+	Ti.API.log(win);
 	});
-	self.add(button);	
+	self.add(button);
+	
+	
+	
+	//var tabGroup = win.tabGroup;
+	
 	return self;
 };
 
