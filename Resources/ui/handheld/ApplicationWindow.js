@@ -27,10 +27,12 @@ function ApplicationWindow(title) {
 		height:imageHeight*bottomTabWidth/imageWidth,
 		bottom:0,
 		left:0+bottomTabWidth*i,
-		indexArray:[0,1,2,3]
+		indexArray:[0,1,2,3],
+		index:i
 		});
 		bottomTabView[i].addEventListener('click',function(e){
-			Ti.API.log(e.source.indexArray)
+			Ti.API.log(e.source.indexArray);
+			Ti.API.log(self.tabGroup.tabs[e.source.index].active=true)
 		})
 		self.add(bottomTabView[i]);
 	}
