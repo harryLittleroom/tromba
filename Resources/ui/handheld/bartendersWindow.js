@@ -1,4 +1,4 @@
-var commonWindow = require('ui/handheld/bartendersWindow');
+var commonWindow = require('ui/handheld/ApplicationWindow');
 
 function bartendersWindow(commonProperties) {
 	var self = new commonWindow('myTitle');

@@ -1,4 +1,4 @@
-var commonWindow = require('ui/handheld/storyWindow');
+var commonWindow = require('ui/handheld/ApplicationWindow');
 
 function storyWindow(commonProperties) {
 	var self = new commonWindow('myTitle');

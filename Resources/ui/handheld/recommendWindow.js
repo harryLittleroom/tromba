@@ -1,4 +1,4 @@
-var commonWindow = require('ui/handheld/recommendWindow');
+var commonWindow = require('ui/handheld/ApplicationWindow');
 
 
 function recommendWindow() {

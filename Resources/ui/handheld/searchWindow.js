@@ -1,4 +1,4 @@
-var commonWindow = require('ui/handheld/searchWindow');
+var commonWindow = require('ui/handheld/ApplicationWindow');
 
 function searchWindow(commonProperties) {
 	var self = new commonWindow('myTitle');
