@@ -34,21 +34,32 @@ function bartendersWindow(commonProperties) {
 			var win = new commonWindow();
 
 			var button = Titanium.UI.createButton({
-				top : -20,
-				height : 40,
-				width : getImageByFileName("/images/iphoneImage/backButton.png").width,
+				height : getImageByFileName("/images/iphoneImage/backButton.png").height / 2,
+				width : getImageByFileName("/images/iphoneImage/backButton.png").width / 2,
 				backgroundImage : "/images/iphoneImage/backButton.png",
-				zIndex : 999
 			});
-
+			self.leftNavButton = button;
 			var winview = Ti.UI.createView({
 				backgroundImage : '/images/iphoneImage/bartenderImage.png',
 				height : getImageByFileName('/images/iphoneImage/bartenderImage.png').height * platformWidth / getImageByFileName('/images/iphoneImage/bartenderImage.png').width,
 			});
+
+			button.addEventListener('click', function() {
+				self.add(scrollView);
+				self.leftNavButton = null;
+				scrollViewInside.animate({
+					top : 900,
+					duration : 500
+				}, function() {
+					self.remove(scrollViewInside);
+				});
+			})
 			var scrollViewInside = new createView();
+			//	scrollViewInside.top =scrollViewInside.top-50;
 			scrollViewInside.height = scrollViewInside.height;
 			scrollViewInside.zIndex = 9;
 			scrollViewInside.add(winview)
+			//winview.add(button);
 			self.add(scrollViewInside);
 		})
 		scrollView.add(view);
