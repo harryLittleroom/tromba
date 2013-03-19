@@ -3,19 +3,22 @@ var commonWindow = require('ui/handheld/ApplicationWindow');
 function bartendersWindow(commonProperties) {
 	var self = new commonWindow();
 	var topBarHeight = self.topBarHeight
-	
+
 	var bartenderImage = getImageByFileName('/images/iphoneImage/bartenderRow.jpg')
 
-	var createView = Ti.UI.createScrollView({
-		contentWidth : 'auto',
-		contentHeight : 'auto',
-		showVerticalScrollIndicator : true,
-		showHorizontalScrollIndicator : false,
-		height : '80%',
-		width : '100%',
-		top : self.children[0].height
-	});
-	var scrollView = createView;
+	var createView = function() {
+		var scrollview = Ti.UI.createScrollView({
+			contentWidth : 'auto',
+			contentHeight : 'auto',
+			showVerticalScrollIndicator : true,
+			showHorizontalScrollIndicator : false,
+			height : '70%',
+			width : '100%',
+			top : topBarHeight
+		});
+		return scrollview;
+	}
+	var scrollView = new createView();
 
 	for (var i = 0; i < 10; i++) {
 		var view = Titanium.UI.createView({
@@ -38,11 +41,15 @@ function bartendersWindow(commonProperties) {
 			})
 			var winview = Ti.UI.createView({
 				backgroundImage : '/images/iphoneImage/bartenderImage.png',
-				height : getImageByFileName( '/images/iphoneImage/bartenderImage.png').height*platformWidth / getImageByFileName( '/images/iphoneImage/bartenderImage.png').width,
-				top:self.children[0].height
-				
+				height : getImageByFileName('/images/iphoneImage/bartenderImage.png').height * platformWidth / getImageByFileName('/images/iphoneImage/bartenderImage.png').width,
+				top : self.children[0].height
+
 			});
-			win.add(winview);
+
+			var scrollViewInside = new createView();
+			
+			scrollViewInside.add(winview)
+			win.add(scrollViewInside);
 			win.add(button);
 			self.containingTab.open(win);
 		})
