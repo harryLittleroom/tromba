@@ -33,10 +33,10 @@ if (Ti.version < 1.8 ) {
 		Window = require('ui/tablet/ApplicationWindow');
 	}
 	else {
-		Window1 = require('ui/handheld/bartendersWindow');
-		Window2 = require('ui/handheld/recommendWindow');
-		Window3 = require('ui/handheld/searchWindow');
-		Window4 = require('ui/handheld/storyWindow');
+		Window1 = require('ui/handheld/storyWindow');
+		Window2 = require('ui/handheld/bartendersWindow');
+		Window3 = require('ui/handheld/recommendWindow');
+		Window4 = require('ui/handheld/searchWindow');
 		windowArray = [Window1,Window2,Window3,Window4]		
 	}
 
