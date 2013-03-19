@@ -4,23 +4,15 @@ function ApplicationWindow() {
 	var bottomTabWidth = platformWidth / 4;
 	var imageHeight = getImageByFileName("/images/iphoneImage/bartenderBottomTab.png").height;
 	var imageWidth = getImageByFileName("/images/iphoneImage/bartenderBottomTab.png").width;
-	
+
 	var self = Ti.UI.createWindow({
-		navBarHidden : true,
+		barImage : '/images/iphoneImage/topbar.png',
+		title : null,
 		tabBarHidden : true,
 		backgroundImage : '/images/iphoneImage/background.jpg',
-		topBarHeight:50,
-		bottomBarHeight:imageHeight * bottomTabWidth / imageWidth,
+		topBarHeight : 50,
+		bottomBarHeight : imageHeight * bottomTabWidth / imageWidth,
 	});
-	var topBarView = Titanium.UI.createView({
-		backgroundImage : '/images/iphoneImage/topbar.png',
-		width : platformWidth,
-		height : 50,
-		top : 0,
-		zIndex : 10
-	});
-	self.add(topBarView);
-	
 
 	var bottomTabView = new Array();
 	for (var i = 0; i < 4; i++) {
@@ -32,7 +24,7 @@ function ApplicationWindow() {
 			left : 0 + bottomTabWidth * i,
 			indexArray : [0, 1, 2, 3],
 			index : i,
-			zIndex:10
+			zIndex : 10
 		});
 		bottomTabView[i].addEventListener('click', function(e) {
 			self.tabGroup.tabs[e.source.index].active = true;
