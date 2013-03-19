@@ -2,8 +2,8 @@ Ti.include('/ui/common/common.js');
 
 function ApplicationWindow() {
 	var bottomTabWidth = platformWidth / 4;
-	var imageHeight = getImageByFileName("/images/iphoneImage/bartenderBottomTab.png").height;
-	var imageWidth = getImageByFileName("/images/iphoneImage/bartenderBottomTab.png").width;
+	var imageHeight = getImageByFileName("/images/iphoneImage/bartenderTab.jpg").height;
+	var imageWidth = getImageByFileName("/images/iphoneImage/bartenderTab.jpg").width;
 
 	var self = Ti.UI.createWindow({
 		barImage : '/images/iphoneImage/topbar.png',
@@ -15,9 +15,10 @@ function ApplicationWindow() {
 	});
 
 	var bottomTabView = new Array();
+	var tabButtonImageArray = ['/images/iphoneImage/storyTab.jpg','/images/iphoneImage/bartenderTab.jpg','/images/iphoneImage/recoTab.jpg','/images/iphoneImage/searchTab.jpg']
 	for (var i = 0; i < 4; i++) {
 		bottomTabView[i] = Titanium.UI.createView({
-			backgroundImage : '/images/iphoneImage/bartenderBottomTab.png',
+			backgroundImage : tabButtonImageArray[i],
 			width : bottomTabWidth,
 			height : imageHeight * bottomTabWidth / imageWidth,
 			bottom : 0,
