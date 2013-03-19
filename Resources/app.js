@@ -41,12 +41,10 @@ if (Ti.version < 1.8 ) {
 	}
 
 	var ApplicationTabGroup = require('ui/common/ApplicationTabGroup');
-	new ApplicationTabGroup(windowArray).open();
+//	new ApplicationTabGroup(windowArray).open();
 	
-	// setTimeout(function() {
-    // new ApplicationTabGroup(Window).open();
-// }, 5000);
-//test commit
-//local commit
-//another local commit
+	setTimeout(function() {
+    new ApplicationTabGroup(windowArray).open({transition:Titanium.UI.iPhone.AnimationStyle.CURL_UP});
+}, 1000);
+
 })();
