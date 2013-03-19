@@ -30,10 +30,6 @@ function ApplicationWindow() {
 			index : i
 		});
 		bottomTabView[i].addEventListener('click', function(e) {
-			for(var value in self){
-				Ti.API.log(value);
-			}
-			Ti.API.log(self.backgroundImage);
 			self.tabGroup.tabs[e.source.index].active = true;
 		})
 		self.add(bottomTabView[i]);
