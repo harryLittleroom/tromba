@@ -5,7 +5,8 @@ function ApplicationWindow() {
 	var self = Ti.UI.createWindow({
 		navBarHidden : true,
 		tabBarHidden : true,
-		backgroundImage : '/images/iphoneImage/background.jpg'
+		backgroundImage : '/images/iphoneImage/background.jpg',
+		topBarHeight:50
 	});
 	var topBarView = Titanium.UI.createView({
 		backgroundImage : '/images/iphoneImage/topbar.png',
