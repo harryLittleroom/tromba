@@ -13,9 +13,17 @@ function storyWindow(commonProperties) {
 		});
 		return button
 	}
+	
+	var buttonEvent = function(){
+		
+	}
+	
 	var storyButton = new createStoryButton('/images/iphoneImage/storyButton.png', 10);
 	var whyButton = new createStoryButton('/images/iphoneImage/whyUseButton.png', 10 + getImageByFileName('/images/iphoneImage/tequilaButton.png').height / 2 + 10);
 	var tequilaButton = new createStoryButton('/images/iphoneImage/tequilaButton.png', 10 + getImageByFileName('/images/iphoneImage/tequilaButton.png').height + 20);
+	
+	
+	
 	self.add(storyButton);
 	self.add(whyButton);
 	self.add(tequilaButton);

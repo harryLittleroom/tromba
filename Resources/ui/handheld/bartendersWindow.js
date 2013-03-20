@@ -7,20 +7,8 @@ function bartendersWindow(commonProperties) {
 	var bartenderImage = getImageByFileName('/images/iphoneImage/bartenderRow.jpg')
 	Ti.API.log(topBarHeight);
 	Ti.API.log(bottonBarHeight);
-	var createView = function() {
-		var scrollview = Ti.UI.createScrollView({
-			contentWidth : 'auto',
-			contentHeight : 'auto',
-			showVerticalScrollIndicator : true,
-			showHorizontalScrollIndicator : false,
-			height : platformHeight - topBarHeight - bottonBarHeight,
-			width : '100%',
-			top : 0,
-			zIndex : 8
-		});
-		return scrollview;
-	}
-	var scrollView = new createView();
+	
+	var scrollView = new addScrollView();
 
 	for (var i = 0; i < 10; i++) {
 		var view = Titanium.UI.createView({
@@ -33,7 +21,7 @@ function bartendersWindow(commonProperties) {
 			self.remove(scrollView);
 			var win = new commonWindow();
 
-			var button = addBackButton(self, function() {
+			var button = new addBackButton(self, function() {
 				self.add(scrollView);
 				self.leftNavButton = null;
 				scrollViewInside.animate({
@@ -47,7 +35,7 @@ function bartendersWindow(commonProperties) {
 				backgroundImage : '/images/iphoneImage/bartenderImage.png',
 				height : getImageByFileName('/images/iphoneImage/bartenderImage.png').height * platformWidth / getImageByFileName('/images/iphoneImage/bartenderImage.png').width,
 			});
-			var scrollViewInside = new createView();
+			var scrollViewInside = new addScrollView();
 			scrollViewInside.height = scrollViewInside.height;
 			scrollViewInside.zIndex = 9;
 			scrollViewInside.add(winview)
