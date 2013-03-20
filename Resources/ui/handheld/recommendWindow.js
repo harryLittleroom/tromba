@@ -20,11 +20,10 @@ function recommendWindow() {
 		var emailDialog = Ti.UI.createEmailDialog()
 		emailDialog.subject = "Thanks for your recommendation";
 		emailDialog.toRecipients = ['harry@littleroom.ca'];
-		emailDialog.messageBody = '<b>Please attach an image below:</b>';
+		emailDialog.messageBody = 'Please attach an image below:';
 		emailDialog.open();
 	})
-	
-	
+
 	self.add(recoText);
 	self.add(recoButton);
 	return self;
