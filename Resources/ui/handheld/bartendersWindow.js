@@ -7,7 +7,7 @@ function bartendersWindow(commonProperties) {
 	var bartenderImage = getImageByFileName('/images/iphoneImage/bartenderRow.jpg')
 	Ti.API.log(topBarHeight);
 	Ti.API.log(bottonBarHeight);
-	
+
 	var scrollView = new addScrollView();
 
 	for (var i = 0; i < 10; i++) {
@@ -18,24 +18,17 @@ function bartendersWindow(commonProperties) {
 			top : bartenderImage.height * platformWidth / bartenderImage.width * i,
 		});
 		view.addEventListener('click', function() {
-			self.remove(scrollView);
-			var win = new commonWindow();
 
-			var button = new addBackButton(self, function() {
-				self.add(scrollView);
-				self.leftNavButton = null;
-				scrollViewInside.animate({
-					top : 900,
-					duration : 500
-				}, function() {
-					self.remove(scrollViewInside);
-				});
-			});
+			self.remove(scrollView);
+
 			var winview = Ti.UI.createView({
 				backgroundImage : '/images/iphoneImage/bartenderImage.png',
 				height : getImageByFileName('/images/iphoneImage/bartenderImage.png').height * platformWidth / getImageByFileName('/images/iphoneImage/bartenderImage.png').width,
 			});
 			var scrollViewInside = new addScrollView();
+			var button = new addBackButton(self, scrollViewInside, function() {
+				self.add(scrollView);
+			});
 			scrollViewInside.height = scrollViewInside.height;
 			scrollViewInside.zIndex = 9;
 			scrollViewInside.add(winview)

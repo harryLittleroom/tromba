@@ -12,6 +12,7 @@ function ApplicationWindow() {
 		backgroundImage : '/images/iphoneImage/background.jpg',
 		topBarHeight : 50,
 		bottomBarHeight : imageHeight * bottomTabWidth / imageWidth,
+		name:'common window'
 	});
 
 	var bottomTabView = new Array();
