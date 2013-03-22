@@ -22,7 +22,7 @@ function ApplicationTabGroup(Windows) {
 		self.addTab(tabArray[k]);
 		Ti.App.TabGroup = self;
 	}
-	self.tabs[3].active = true;
+	self.tabs[0].active = true;
 	return self;
 };
 
