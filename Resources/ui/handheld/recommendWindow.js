@@ -3,6 +3,7 @@ var commonWindow = require('ui/handheld/ApplicationWindow');
 
 function recommendWindow() {
 	var self = new commonWindow();
+	self.index = 2;
 	var recoText = Ti.UI.createImageView({
 		image:'/images/iphoneImage/recoText.png',
 		height : getImageByFileName('/images/iphoneImage/recoText.png').height / 2,

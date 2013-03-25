@@ -2,6 +2,10 @@ var commonWindow = require('ui/handheld/ApplicationWindow');
 
 function storyWindow(commonProperties) {
 	var self = new commonWindow();
+	self.index = 0;
+	// self.addEventListener('focus', function(e) {
+// 		
+	// });
 	var buttonEvent = function() {
 		var newScrollView = new addScrollView();
 		self.add(newScrollView);
@@ -25,35 +29,37 @@ function storyWindow(commonProperties) {
 				height : getImageByFileName('/images/iphoneImage/story.png').height * platformWidth / getImageByFileName('/images/iphoneImage/story.png').width,
 			});
 			var labelArea = Ti.UI.createLabel({
-				text: 'A simple label',
-			//	backgroundColor:'white',
+				text : 'A simple label',
+				//	backgroundColor:'white',
 			});
-			
+
 			var labelArea2 = Ti.UI.createLabel({
-				text: 'A simple label2',
+				text : 'A simple label2',
 				//backgroundColor:'white',
-				font:{fontFamily: 'Zapfino' },
-				top:10
+				font : {
+					fontFamily : 'Zapfino'
+				},
+				top : 10
 			});
-			
+
 			var labelArea3 = Ti.UI.createLabel({
-				text: 'A simple label3',
-			//	backgroundColor:'white',
-				font:{fontFamily: 'uni 05_53' },
-				top:60
+				text : 'A simple label3',
+				//	backgroundColor:'white',
+				font : {
+					fontFamily : 'uni 05_53'
+				},
+				top : 60
 			})
-			
-			
-			getAppData(function(e){
+
+			getAppData(function(e) {
 				myData = JSON.parse(e);
-				Ti.API.log(myData.story.tequilaTrutbs.text);
+				//	Ti.API.log(myData.story.tequilaTrutbs.text);
 				labelArea.text = myData.story.tequilaTrutbs.text;
 				labelArea2.title = myData.story.tequilaTrutbs.title;
 				winview.add(labelArea);
 				winview.add(labelArea2);
 			});
-			
-			
+
 			//winview.add(labelArea3);
 			var newScrollView = new addScrollView();
 			newScrollView.add(winview);

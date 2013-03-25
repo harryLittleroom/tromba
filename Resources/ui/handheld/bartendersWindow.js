@@ -2,12 +2,10 @@ var commonWindow = require('ui/handheld/ApplicationWindow');
 
 function bartendersWindow(commonProperties) {
 	var self = new commonWindow();
+	self.index = 1;
 	var topBarHeight = self.topBarHeight
 	var bottonBarHeight = self.bottomBarHeight
 	var bartenderImage = getImageByFileName('/images/iphoneImage/bartenderRow.jpg')
-	Ti.API.log(topBarHeight);
-	Ti.API.log(bottonBarHeight);
-
 	var scrollView = new addScrollView();
 
 	for (var i = 0; i < 10; i++) {

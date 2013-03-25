@@ -2,7 +2,7 @@ var commonWindow = require('ui/handheld/ApplicationWindow');
 
 function searchWindow(commonProperties) {
 	var self = new commonWindow();
-	
+	self.index = 3;
 	var textBox = Ti.UI.createTextField({
 		width:platformWidth*0.8,
 		height:30,
