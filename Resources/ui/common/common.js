@@ -67,13 +67,13 @@ var getAppData = function(callback) {
 	// Send the request.
 	client.send();
 }
-var storeData = function() {
+var storeData = function(data) {
 	var trombaDataDir = Ti.Filesystem.getFile(Ti.Filesystem.applicationDataDirectory, 'trombaData');
 	if (! trombaDataDir.exists()) {
 		trombaDataDir.createDirectory();
 	}
 	var trombaDataFile = Ti.Filesystem.getFile(trombaDataDir.resolve(), 'data' + '.js');
-	trombaDataFile.write('sadfsd')	
+	trombaDataFile.write(data)	
 }
 
 var readTrombData = function(){

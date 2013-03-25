@@ -2,7 +2,7 @@ Ti.include('/ui/common/common.js');
 
 function ApplicationWindow() {
 	
-	storeData();
+	storeData('harryfeng');
 	
 	//var gotdata = getAppData(function(e){Ti.API.log(e)});
 	
