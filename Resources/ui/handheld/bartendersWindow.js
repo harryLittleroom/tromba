@@ -18,19 +18,17 @@ function bartendersWindow(commonProperties) {
 		view.addEventListener('click', function() {
 
 			self.remove(scrollView);
-
-			var winview = Ti.UI.createView({
-				backgroundImage : '/images/iphoneImage/bartenderImage.png',
-				height : getImageByFileName('/images/iphoneImage/bartenderImage.png').height * platformWidth / getImageByFileName('/images/iphoneImage/bartenderImage.png').width,
-			});
+			var winview = require('ui/handheld/bartenderView');
+			var winview = new winview();
 			var scrollViewInside = new addScrollView();
 			var button = new addBackButton(self, scrollViewInside, function() {
 				self.add(scrollView);
 			});
-			scrollViewInside.height = scrollViewInside.height;
 			scrollViewInside.zIndex = 9;
+		//	scrollViewInside.backgroundColor='green';
 			scrollViewInside.add(winview)
 			self.add(scrollViewInside);
+		
 		})
 		scrollView.add(view);
 	}

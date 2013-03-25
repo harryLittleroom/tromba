@@ -1,11 +1,15 @@
 var platformWidth = Titanium.Platform.displayCaps.platformWidth;
 var platformHeight = Titanium.Platform.displayCaps.platformHeight;
-
+var debugMode = true;
 //get the image blob by file name
-var getImageByFileName = function(fileName) {
-	imageFile = Ti.Filesystem.getFile(Ti.Filesystem.resourcesDirectory, fileName);
+var getImageByFileName = function(filePath) {
+	imageFile = Ti.Filesystem.getFile(Ti.Filesystem.resourcesDirectory, filePath);
 	var image = imageFile.read();
 	return image;
+};
+
+var scaleHeightByWidth = function(filePath){
+	return getImageByFileName(filePath).height * platformWidth / getImageByFileName(filePath).width
 }
 //call this function to add a button at the top left cornor
 var addBackButton = function(targetWindow, newScrollView, eventCallBack) {
@@ -81,4 +85,22 @@ var readTrombData = function(){
 	var blob = file.read();
 	var readText = blob.text;
 	return readText;
+};
+
+var debugSlider = function(targetWindow,top,callBack){
+	var slider = Titanium.UI.createSlider({
+		top : top,
+		right:0,
+		min : 0,
+		max : 680,
+		width : '100%',
+		zIndex:100
+	});
+	slider.addEventListener('change',function(e){
+		callBack(e.source.value);
+		Ti.API.log(e.source.value);
+	});
+	
+	if(debugMode)targetWindow.add(slider)
+	return slider;
 }

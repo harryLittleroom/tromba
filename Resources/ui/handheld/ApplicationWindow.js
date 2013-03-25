@@ -10,6 +10,8 @@ function ApplicationWindow() {
 	var imageHeight = getImageByFileName("/images/iphoneImage/bartenderTab.jpg").height;
 	var imageWidth = getImageByFileName("/images/iphoneImage/bartenderTab.jpg").width;
 
+	
+
 	var self = Ti.UI.createWindow({
 		barImage : '/images/iphoneImage/topbar.png',
 		title : null,
@@ -17,7 +19,8 @@ function ApplicationWindow() {
 		backgroundImage : '/images/iphoneImage/background.jpg',
 		topBarHeight : 50,
 		bottomBarHeight : imageHeight * bottomTabWidth / imageWidth,
-		name : 'common window'
+		name : 'common window',
+		
 	});
 
 	var bottomTabView = new Array();
@@ -44,14 +47,14 @@ function ApplicationWindow() {
 
 	self.addEventListener('focus', function(e) {
 		if (self.children[self.index].indexArray) {
-			Ti.API.log(self.children[self.index].backgroundImage)
-			Ti.API.log(self.children[self.index].backgroundImage=tabButtonActiveImageArray[self.index])
+
+			self.children[self.index].backgroundImage = tabButtonActiveImageArray[self.index]
 		}
 
 	})
 	self.addEventListener('blur', function(e) {
 		if (self.children[self.index].indexArray) {
-			Ti.API.log(self.children[self.index].backgroundImage=tabButtonActiveImageArray[self.index])
+			self.children[self.index].backgroundImage = tabButtonActiveImageArray[self.index]
 		}
 
 	})
