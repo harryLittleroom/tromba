@@ -2,7 +2,10 @@ Ti.include('/ui/common/common.js');
 
 function ApplicationWindow() {
 	
-	var gotdata = getAppData(function(e){Ti.API.log(e)});
+	storeData();
+	
+	//var gotdata = getAppData(function(e){Ti.API.log(e)});
+	
 	var bottomTabWidth = platformWidth / 4;
 	var imageHeight = getImageByFileName("/images/iphoneImage/bartenderTab.jpg").height;
 	var imageWidth = getImageByFileName("/images/iphoneImage/bartenderTab.jpg").width;

@@ -44,9 +44,10 @@ var addScrollView = function() {
 
 var getAppData = function(callback) {
 	var url = "http://littleroom.ca/zxc/tromba/tromba.json";
-	function getData(data){
+	function getData(data) {
 		return data;
 	}
+
 	var client = Ti.Network.createHTTPClient({
 		// function called when the response data is available
 		onload : function(e) {
@@ -63,7 +64,21 @@ var getAppData = function(callback) {
 	});
 	// Prepare the connection.
 	client.open("GET", url);
-		// Send the request.
+	// Send the request.
 	client.send();
-	
-} 
+}
+var storeData = function() {
+	var trombaDataDir = Ti.Filesystem.getFile(Ti.Filesystem.applicationDataDirectory, 'trombaData');
+	if (! trombaDataDir.exists()) {
+		trombaDataDir.createDirectory();
+	}
+	var trombaDataFile = Ti.Filesystem.getFile(trombaDataDir.resolve(), 'data' + '.js');
+	trombaDataFile.write('sadfsd')	
+}
+
+var readTrombData = function(){
+	file = Ti.Filesystem.getFile(Ti.Filesystem.applicationDataDirectory, "trombaData/data.js");
+	var blob = file.read();
+	var readText = blob.text;
+	return readText;
+}
