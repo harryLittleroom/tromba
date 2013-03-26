@@ -1,6 +1,6 @@
 var platformWidth = Titanium.Platform.displayCaps.platformWidth;
 var platformHeight = Titanium.Platform.displayCaps.platformHeight;
-var debugMode = true;
+var debugMode = false;
 //get the image blob by file name
 var getImageByFileName = function(filePath) {
 	imageFile = Ti.Filesystem.getFile(Ti.Filesystem.resourcesDirectory, filePath);
@@ -47,7 +47,7 @@ var addScrollView = function() {
 };
 
 var getAppData = function(callback) {
-	var url = "http://littleroom.ca/zxc/tromba/tromba.json";
+	var url = "http://wf-tromba-staging.littleroominc.com/catalogue/pages";
 	function getData(data) {
 		return data;
 	}
@@ -56,8 +56,6 @@ var getAppData = function(callback) {
 		// function called when the response data is available
 		onload : function(e) {
 			callback(this.responseText);
-			//getData(this.responseText)
-			//Ti.API.info("Received text: " + this.responseText);
 		},
 		// function called when an error occurs, including a timeout
 		onerror : function(e) {

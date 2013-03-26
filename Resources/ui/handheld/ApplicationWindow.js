@@ -2,8 +2,13 @@ Ti.include('/ui/common/common.js');
 
 function ApplicationWindow() {
 
-	storeData('harryfeng');
-
+	//storeData('harryfeng');
+	
+	getAppData(function(data){
+		storeData(data);
+		Ti.API.log(readTrombData());
+	});
+	
 	//var gotdata = getAppData(function(e){Ti.API.log(e)});
 
 	var bottomTabWidth = platformWidth / 4;
