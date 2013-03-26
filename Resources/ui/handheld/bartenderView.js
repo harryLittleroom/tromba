@@ -131,6 +131,7 @@ var bartenderView = function() {
 	debugSlider(self,630, function(value) {
 		signatureLabel.top = value;
 	});
+	
 	self.add(header);
 	self.add(portraitImage);
 	self.add(nameLabel);
