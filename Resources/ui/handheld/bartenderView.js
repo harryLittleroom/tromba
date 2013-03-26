@@ -1,6 +1,6 @@
 var bartenderView = function() {
 	var self = Ti.UI.createView({
-		backgroundImage : '/images/iphoneImage/bartenderImage.jpg',
+		//backgroundImage : '/images/iphoneImage/bartenderImage.jpg',
 		height : scaleHeightByWidth('/images/iphoneImage/bartenderImage.jpg')
 	});
 	var header = Ti.UI.createImageView({
@@ -53,10 +53,10 @@ var bartenderView = function() {
 			fontSize: 18
 		},
 		color : 'black',
-		top : 113.93,
+		top : 133.93,
 		height : 'auto',
 		width : 'auto',
-		left : 44.44,
+		left : 58.44,
 	});
 	
 	var drinkName = Ti.UI.createLabel({
@@ -67,10 +67,10 @@ var bartenderView = function() {
 			fontWeight:'bold'
 		},
 		color : 'black',
-		top : 113.93,
+		top : 133.93,
 		height : 'auto',
 		width : 'auto',
-		left : 112.03,
+		left : 136.03,
 	});
 	
 	var drinkImage = Ti.UI.createImageView({
@@ -78,14 +78,55 @@ var bartenderView = function() {
 		width : platformWidth / 3.5,
 		height : platformWidth / 3.5,
 		borderRadius:20,
-		top:216.3,
-	})
-	
-	debugSlider(self,0, function(value) {
-		shareButton.top = value;
+		top:209.49,
 	});
-	debugSlider(self,10, function(value) {
-		drinkImage.top = value;
+	
+	
+	var stepLabel = Ti.UI.createLabel({
+		text : 'A long label with\na few line breaks\nand unicode (UTF8)\nsymbols such as\na white chess piece \u2655\nand the euro symbol \u20ac\nlooks like this!\n',
+		font : {
+			fontSize : 12,
+			fontWeight : 'bold'
+		},
+		color : 'black',
+		top : 337.93,
+		height : 'auto',
+		width : 'auto',
+		left : 28.03,
+	}); 
+	
+	var quoatLabel = Ti.UI.createLabel({
+		text : 'this is a quato',
+		font:{
+			fontSize : 12,
+			fontWeight : 'bold'
+		},
+		color : 'white',
+		top : 509.93,
+		height : 'auto',
+		width : 'auto',
+		left : 28.03,
+	}); 
+	
+	var signatureLabel = Ti.UI.createLabel({
+		text : '~Sandy',
+		font : {
+			fontSize : 17,
+			fontWeight : 'bold'
+		},
+		color : 'white',
+		top : 614.93,
+		height : 'auto',
+		width : 'auto',
+		left : 76.03,
+	}); 
+
+	
+	debugSlider(self,600, function(value) {
+		signatureLabel.left = value;
+	});
+	debugSlider(self,630, function(value) {
+		signatureLabel.top = value;
 	});
 	//Ti.API.log(sliderValue)
 	// self.titleControl.addEventListener('change', function(e) {
@@ -101,11 +142,14 @@ var bartenderView = function() {
 	self.add(recipeLabel);
 	self.add(drinkName);
 	self.add(drinkImage);
+	self.add(stepLabel);
+	self.add(quoatLabel);
+	self.add(signatureLabel);
 	var shareButton = Ti.UI.createButton({
 		height : 30,
 		width : 263,
 		backgroundImage : '/images/iphoneImage/shareButton.png',
-		top :636
+		top :685
 	});
 
 	shareButton.addEventListener('click', function() {
