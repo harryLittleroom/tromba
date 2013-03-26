@@ -4,7 +4,7 @@ function storyWindow(commonProperties) {
 	var self = new commonWindow();
 	self.index = 0;
 	// self.addEventListener('focus', function(e) {
-// 		
+	//
 	// });
 	var buttonEvent = function() {
 		var newScrollView = new addScrollView();
@@ -22,19 +22,16 @@ function storyWindow(commonProperties) {
 			width : getImageByFileName(backGroundImage).width / 2,
 			top : top,
 		});
-		button.addEventListener('click', function() {
+		button.addEventListener('click', function(e) {
+			
 			var winview = Ti.UI.createView({
 				//backgroundImage : '/images/iphoneImage/story.png',
 				//backgroundColor:'white',
 				height : getImageByFileName('/images/iphoneImage/story.png').height * platformWidth / getImageByFileName('/images/iphoneImage/story.png').width,
 			});
-			var labelArea = Ti.UI.createLabel({
-				text : 'A simple label',
-				//	backgroundColor:'white',
-			});
-
+			Ti.include('ui/handheld/tromba.json');
 			var labelArea2 = Ti.UI.createLabel({
-				text : 'A simple label2',
+				text : storydata['story']['trombaStory'].title,
 				//backgroundColor:'white',
 				font : {
 					fontFamily : 'Zapfino'
@@ -43,7 +40,7 @@ function storyWindow(commonProperties) {
 			});
 
 			var labelArea3 = Ti.UI.createLabel({
-				text : 'A simple label3',
+				text : storydata['story']['trombaStory'].text,
 				//	backgroundColor:'white',
 				font : {
 					fontFamily : 'uni 05_53'
@@ -51,15 +48,9 @@ function storyWindow(commonProperties) {
 				top : 60
 			})
 
-			getAppData(function(e) {
-				myData = JSON.parse(e);
-				//	Ti.API.log(myData.story.tequilaTrutbs.text);
-				labelArea.text = myData.story.tequilaTrutbs.text;
-				labelArea2.title = myData.story.tequilaTrutbs.title;
-				winview.add(labelArea);
-				winview.add(labelArea2);
-			});
-
+			Ti.API.log(storydata['story']);
+			winview.add(labelArea3)
+			winview.add(labelArea2)
 			//winview.add(labelArea3);
 			var newScrollView = new addScrollView();
 			newScrollView.add(winview);

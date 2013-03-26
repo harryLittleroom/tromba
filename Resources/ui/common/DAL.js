@@ -8,7 +8,6 @@ exports.getAppData = function(callback) {
 	var client = Ti.Network.createHTTPClient({
 		// function called when the response data is available
 		onload : function(e) {
-		//	Ti.API.log(this.responseText);
 			callback(this.responseText);
 		},
 		// function called when an error occurs, including a timeout

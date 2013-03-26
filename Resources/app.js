@@ -39,7 +39,6 @@ if (Ti.version < 1.8) {
 	
 	Data.getAppData(function(data){
 		Data.storeData(data);
-		Ti.API.log(Data.readTrombData());
 	});
 	
 	var ApplicationTabGroup = require('ui/common/ApplicationTabGroup');

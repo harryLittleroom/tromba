@@ -1,6 +1,7 @@
 var Data = require('ui/common/DAL');
 
-var bartenderView = function() {
+var bartenderView = function(i) {
+
 	var data = Data.readTrombData();
 	var self = Ti.UI.createView({
 		//backgroundImage : '/images/iphoneImage/bartenderImage.jpg',
@@ -23,7 +24,7 @@ var bartenderView = function() {
 		borderRadius : 20,
 	});
 	var nameLabel = Ti.UI.createLabel({
-		text : data[0].contact.name,
+		text : data[i].contact.name,
 		color : 'white',
 		top : 15.35,
 		height : 'auto',
@@ -32,7 +33,7 @@ var bartenderView = function() {
 		left : 143,
 	})
 	var barLabel = Ti.UI.createLabel({
-		text : data[0].company.name,
+		text : data[i].company.name,
 		color : '#c9823a',
 		top : 44.44,
 		height : 'auto',
@@ -86,7 +87,7 @@ var bartenderView = function() {
 	
 	
 	var stepLabel = Ti.UI.createLabel({
-		text : Data.parseHtml(data[0].description),
+		text : Data.parseHtml(data[i].description),
 		font : {
 			fontSize : 12,
 			fontWeight : 'bold'
@@ -99,7 +100,7 @@ var bartenderView = function() {
 	}); 
 	
 	var quoatLabel = Ti.UI.createLabel({
-		text : data[0].quote,
+		text : data[i].quote,
 		font:{
 			fontSize : 12,
 			fontWeight : 'bold'
@@ -112,7 +113,7 @@ var bartenderView = function() {
 	}); 
 	
 	var signatureLabel = Ti.UI.createLabel({
-		text : '~'+data[0].contact.name,
+		text : '~'+data[i].contact.name,
 		font : {
 			fontSize : 17,
 			fontWeight : 'bold'

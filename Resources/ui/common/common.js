@@ -59,7 +59,7 @@ var debugSlider = function(targetWindow,top,callBack){
 	});
 	slider.addEventListener('change',function(e){
 		callBack(e.source.value);
-		Ti.API.log(e.source.value);
+		
 	});
 	
 	if(debugMode)targetWindow.add(slider)

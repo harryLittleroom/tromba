@@ -16,6 +16,7 @@ function bartendersWindow(commonProperties) {
 			width : platformWidth,
 			height : bartenderImage.height * platformWidth / bartenderImage.width,
 			top : bartenderImage.height * platformWidth / bartenderImage.width * i,
+			index:i
 		});
 
 		var fontsize = 14;
@@ -67,11 +68,11 @@ function bartendersWindow(commonProperties) {
 			barLabel.top = value;
 		});
 
-		view.addEventListener('click', function() {
+		view.addEventListener('click', function(e) {
 
 			self.remove(scrollView);
 			var winview = require('ui/handheld/bartenderView');
-			var winview = new winview();
+			var winview = new winview(e.source.index);
 			var scrollViewInside = new addScrollView();
 			var button = new addBackButton(self, scrollViewInside, function() {
 				self.add(scrollView);

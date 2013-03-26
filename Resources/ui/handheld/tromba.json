@@ -1,0 +1,16 @@
+var storydata = {
+    "story": {
+        "trombaStory": {
+            "title": "The Tromba Story",
+            "text": "From the highest point of Los Altos in Mexico, Tromba is the epitome of highland tequila.\n\nTromba takes its name from the local ‘big rain’ arriving in the region every spring. These rains provide the\nnourishment that produces the\nﬁnest agave in Mexico.\n\nFounded by Canadian Eric Brass, his international partners and renowned master distiller Marco\nCedano, Tromba is a boutique\nproduced tequila crafted in\nsmall batches.\n\nWith fresh botanical aromas, a sweet ﬂavour proﬁle and smooth ﬁnish, Tromba is the embodiment of\nrefreshment in tequila."
+        },
+        "thisApp": {
+            "title": "Why Use This App",
+            "text": "From the highest point of Los Altos in Mexico, Tromba is the epitome of highland tequila.\n\nTromba takes its name from the local ‘big rain’ arriving in the region every spring. These rains provide the\nnourishment that produces the\nﬁnest agave in Mexico.\n\nFounded by Canadian Eric Brass, his international partners and renowned master distiller Marco\nCedano, Tromba is a boutique\nproduced tequila crafted in\nsmall batches.\n\nWith fresh botanical aromas, a sweet ﬂavour proﬁle and smooth ﬁnish, Tromba is the embodiment of\nrefreshment in tequila."
+        },
+        "tequilaTrutbs": {
+            "title": "5 Tequila Trutbs",
+            "text": "1. Your bad tequila story is from  ‘mixto tequila’:\n\nMixto tequila is 51% tequila, 49%\nlow-grade sugarcane distillate. Tromba is made from 100% blue agave, no additives.\n\n2. The worm is BS:\n\nThe worm in the bottle was started as a marketing gimmick for cheap mezcal. There is nothing traditional about it."
+        }
+    }
+}
