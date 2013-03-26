@@ -1,21 +1,21 @@
 dependencies: \
-  /Users/yuanfengfeng/Dropbox/TitaniumProject/tromba/build/iphone/Classes/TiDOMDocumentProxy.m \
-  /Users/yuanfengfeng/Dropbox/TitaniumProject/tromba/build/iphone/Classes/TiDOMDocumentProxy.h \
-  /Users/yuanfengfeng/Dropbox/TitaniumProject/tromba/build/iphone/Classes/TiProxy.h \
-  /Users/yuanfengfeng/Dropbox/TitaniumProject/tromba/build/iphone/Classes/TiBase.h \
-  /Users/yuanfengfeng/Dropbox/TitaniumProject/tromba/build/iphone/Classes/TiThreading.h \
-  /Users/yuanfengfeng/Dropbox/TitaniumProject/tromba/build/iphone/Classes/TiPublicAPI.h \
-  /Users/yuanfengfeng/Dropbox/TitaniumProject/tromba/build/iphone/Classes/TiEvaluator.h \
-  /Users/yuanfengfeng/Dropbox/TitaniumProject/tromba/build/iphone/Classes/KrollContext.h \
-  /Users/yuanfengfeng/Dropbox/TitaniumProject/tromba/build/iphone/headers/TiCore/TiCore.h \
+  /Users/littleroominc-imac2/Documents/Titanium_Studio_Workspace/tromba/build/iphone/Classes/TiDOMDocumentProxy.m \
+  /Users/littleroominc-imac2/Documents/Titanium_Studio_Workspace/tromba/build/iphone/Classes/TiDOMDocumentProxy.h \
+  /Users/littleroominc-imac2/Documents/Titanium_Studio_Workspace/tromba/build/iphone/Classes/TiProxy.h \
+  /Users/littleroominc-imac2/Documents/Titanium_Studio_Workspace/tromba/build/iphone/Classes/TiBase.h \
+  /Users/littleroominc-imac2/Documents/Titanium_Studio_Workspace/tromba/build/iphone/Classes/TiThreading.h \
+  /Users/littleroominc-imac2/Documents/Titanium_Studio_Workspace/tromba/build/iphone/Classes/TiPublicAPI.h \
+  /Users/littleroominc-imac2/Documents/Titanium_Studio_Workspace/tromba/build/iphone/Classes/TiEvaluator.h \
+  /Users/littleroominc-imac2/Documents/Titanium_Studio_Workspace/tromba/build/iphone/Classes/KrollContext.h \
+  /Users/littleroominc-imac2/Documents/Titanium_Studio_Workspace/tromba/build/iphone/headers/TiCore/TiCore.h \
   headers/TiCore/Ti.h headers/TiCore/TiBase.h \
   headers/TiCore/TiContextRef.h headers/TiCore/TiObjectRef.h \
   headers/TiCore/TiValueRef.h headers/TiCore/WebKitAvailability.h \
   headers/TiCore/TiStringRef.h headers/TiCore/TiStringRefCF.h \
-  /Users/yuanfengfeng/Dropbox/TitaniumProject/tromba/build/iphone/headers/TiCore/TiContextRefPrivate.h \
-  /Users/yuanfengfeng/Dropbox/TitaniumProject/tromba/build/iphone/Classes/KrollCallback.h \
-  /Users/yuanfengfeng/Dropbox/TitaniumProject/tromba/build/iphone/Classes/KrollObject.h \
-  /Users/yuanfengfeng/Dropbox/TitaniumProject/tromba/build/iphone/Classes/GDataXMLNode.h \
+  /Users/littleroominc-imac2/Documents/Titanium_Studio_Workspace/tromba/build/iphone/headers/TiCore/TiContextRefPrivate.h \
+  /Users/littleroominc-imac2/Documents/Titanium_Studio_Workspace/tromba/build/iphone/Classes/KrollCallback.h \
+  /Users/littleroominc-imac2/Documents/Titanium_Studio_Workspace/tromba/build/iphone/Classes/KrollObject.h \
+  /Users/littleroominc-imac2/Documents/Titanium_Studio_Workspace/tromba/build/iphone/Classes/GDataXMLNode.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator6.1.sdk/usr/include/libxml2/libxml/tree.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator6.1.sdk/usr/include/libxml2/libxml/xmlversion.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator6.1.sdk/usr/include/libxml2/libxml/xmlexports.h \
@@ -39,24 +39,24 @@ dependencies: \
   /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator6.1.sdk/usr/include/libxml2/libxml/SAX2.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator6.1.sdk/usr/include/libxml2/libxml/xpath.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator6.1.sdk/usr/include/libxml2/libxml/xpathInternals.h \
-  /Users/yuanfengfeng/Dropbox/TitaniumProject/tromba/build/iphone/Classes/TiDOMNodeProxy.h \
-  /Users/yuanfengfeng/Dropbox/TitaniumProject/tromba/build/iphone/Classes/TiDOMNodeListProxy.h \
-  /Users/yuanfengfeng/Dropbox/TitaniumProject/tromba/build/iphone/Classes/TiDOMTextNodeProxy.h \
-  /Users/yuanfengfeng/Dropbox/TitaniumProject/tromba/build/iphone/Classes/TIDOMCharacterDataProxy.h \
-  /Users/yuanfengfeng/Dropbox/TitaniumProject/tromba/build/iphone/Classes/TiDOMElementProxy.h \
-  /Users/yuanfengfeng/Dropbox/TitaniumProject/tromba/build/iphone/Classes/TiDOMAttrProxy.h \
-  /Users/yuanfengfeng/Dropbox/TitaniumProject/tromba/build/iphone/Classes/TiDOMCDATANodeProxy.h \
-  /Users/yuanfengfeng/Dropbox/TitaniumProject/tromba/build/iphone/Classes/TiDOMCommentProxy.h \
-  /Users/yuanfengfeng/Dropbox/TitaniumProject/tromba/build/iphone/Classes/TiDOMPIProxy.h \
-  /Users/yuanfengfeng/Dropbox/TitaniumProject/tromba/build/iphone/Classes/TiDOMDocFragProxy.h \
-  /Users/yuanfengfeng/Dropbox/TitaniumProject/tromba/build/iphone/Classes/TIDOMDOMImplementationProxy.h \
-  /Users/yuanfengfeng/Dropbox/TitaniumProject/tromba/build/iphone/Classes/TIDOMDocumentTypeProxy.h \
-  /Users/yuanfengfeng/Dropbox/TitaniumProject/tromba/build/iphone/Classes/TiDOMEntityRefProxy.h \
-  /Users/yuanfengfeng/Dropbox/TitaniumProject/tromba/build/iphone/Classes/TiUtils.h \
-  /Users/yuanfengfeng/Dropbox/TitaniumProject/tromba/build/iphone/Classes/TiColor.h \
-  /Users/yuanfengfeng/Dropbox/TitaniumProject/tromba/build/iphone/Classes/TiDimension.h \
-  /Users/yuanfengfeng/Dropbox/TitaniumProject/tromba/build/iphone/Classes/WebFont.h \
-  /Users/yuanfengfeng/Dropbox/TitaniumProject/tromba/build/iphone/Classes/TiFile.h \
-  /Users/yuanfengfeng/Dropbox/TitaniumProject/tromba/build/iphone/Classes/TiBuffer.h \
-  /Users/yuanfengfeng/Dropbox/TitaniumProject/tromba/build/iphone/Classes/TiBlob.h \
-  /Users/yuanfengfeng/Dropbox/TitaniumProject/tromba/build/iphone/Classes/TiDOMValidator.h
+  /Users/littleroominc-imac2/Documents/Titanium_Studio_Workspace/tromba/build/iphone/Classes/TiDOMNodeProxy.h \
+  /Users/littleroominc-imac2/Documents/Titanium_Studio_Workspace/tromba/build/iphone/Classes/TiDOMNodeListProxy.h \
+  /Users/littleroominc-imac2/Documents/Titanium_Studio_Workspace/tromba/build/iphone/Classes/TiDOMTextNodeProxy.h \
+  /Users/littleroominc-imac2/Documents/Titanium_Studio_Workspace/tromba/build/iphone/Classes/TIDOMCharacterDataProxy.h \
+  /Users/littleroominc-imac2/Documents/Titanium_Studio_Workspace/tromba/build/iphone/Classes/TiDOMElementProxy.h \
+  /Users/littleroominc-imac2/Documents/Titanium_Studio_Workspace/tromba/build/iphone/Classes/TiDOMAttrProxy.h \
+  /Users/littleroominc-imac2/Documents/Titanium_Studio_Workspace/tromba/build/iphone/Classes/TiDOMCDATANodeProxy.h \
+  /Users/littleroominc-imac2/Documents/Titanium_Studio_Workspace/tromba/build/iphone/Classes/TiDOMCommentProxy.h \
+  /Users/littleroominc-imac2/Documents/Titanium_Studio_Workspace/tromba/build/iphone/Classes/TiDOMPIProxy.h \
+  /Users/littleroominc-imac2/Documents/Titanium_Studio_Workspace/tromba/build/iphone/Classes/TiDOMDocFragProxy.h \
+  /Users/littleroominc-imac2/Documents/Titanium_Studio_Workspace/tromba/build/iphone/Classes/TIDOMDOMImplementationProxy.h \
+  /Users/littleroominc-imac2/Documents/Titanium_Studio_Workspace/tromba/build/iphone/Classes/TIDOMDocumentTypeProxy.h \
+  /Users/littleroominc-imac2/Documents/Titanium_Studio_Workspace/tromba/build/iphone/Classes/TiDOMEntityRefProxy.h \
+  /Users/littleroominc-imac2/Documents/Titanium_Studio_Workspace/tromba/build/iphone/Classes/TiUtils.h \
+  /Users/littleroominc-imac2/Documents/Titanium_Studio_Workspace/tromba/build/iphone/Classes/TiColor.h \
+  /Users/littleroominc-imac2/Documents/Titanium_Studio_Workspace/tromba/build/iphone/Classes/TiDimension.h \
+  /Users/littleroominc-imac2/Documents/Titanium_Studio_Workspace/tromba/build/iphone/Classes/WebFont.h \
+  /Users/littleroominc-imac2/Documents/Titanium_Studio_Workspace/tromba/build/iphone/Classes/TiFile.h \
+  /Users/littleroominc-imac2/Documents/Titanium_Studio_Workspace/tromba/build/iphone/Classes/TiBuffer.h \
+  /Users/littleroominc-imac2/Documents/Titanium_Studio_Workspace/tromba/build/iphone/Classes/TiBlob.h \
+  /Users/littleroominc-imac2/Documents/Titanium_Studio_Workspace/tromba/build/iphone/Classes/TiDOMValidator.h

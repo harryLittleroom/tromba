@@ -5,7 +5,7 @@ reporting an issue to help us understand your environment, build settings
 and aid in debugging. Please attach this log to any issue that you report.
 ================================================================================
 
-Starting build at 03/25/13 23:52
+Starting build at 03/26/13 11:49
 
 Build details:
 
@@ -16,26 +16,26 @@ Build details:
 
 
 Script arguments:
-   /Users/yuanfengfeng/Library/Application Support/Titanium/mobilesdk/osx/2.1.4.GA/iphone/builder.py
+   /Users/littleroominc-imac2/Library/Application Support/Titanium/mobilesdk/osx/2.1.4.GA/iphone/builder.py
    simulator
    6.1
-   /Users/yuanfengfeng/Dropbox/TitaniumProject/tromba
+   /Users/littleroominc-imac2/Documents/Titanium_Studio_Workspace/tromba
    come.littleroom.tromba
    tromba
    universal
    iphone
 
-Building from: /Users/yuanfengfeng/Library/Application Support/Titanium/mobilesdk/osx/2.1.4.GA/iphone
-Platform: Darwin Kernel Version 11.4.2: Thu Aug 23 16:25:48 PDT 2012; root:xnu-1699.32.7~1/RELEASE_X86_64
+Building from: /Users/littleroominc-imac2/Library/Application Support/Titanium/mobilesdk/osx/2.1.4.GA/iphone
+Platform: Darwin Kernel Version 12.2.0: Sat Aug 25 00:48:52 PDT 2012; root:xnu-2050.18.24~1/RELEASE_X86_64
 
 Xcode path is: /Applications/Xcode.app/Contents/Developer
 
 
 githash=51f2c64, existing_git_hash=51f2c64
-writing contents of /Users/yuanfengfeng/Dropbox/TitaniumProject/tromba/build/iphone/project.xcconfig:
+writing contents of /Users/littleroominc-imac2/Documents/Titanium_Studio_Workspace/tromba/build/iphone/project.xcconfig:
 
 TI_VERSION=2.1.4.GA
-TI_SDK_DIR=/Users/yuanfengfeng/Library/Application Support/Titanium/mobilesdk/osx/$(TI_VERSION)/iphone
+TI_SDK_DIR=/Users/littleroominc-imac2/Library/Application Support/Titanium/mobilesdk/osx/$(TI_VERSION)/iphone
 TI_APPID=come.littleroom.tromba
 OTHER_LDFLAGS[sdk=iphoneos*]=$(inherited) -weak_framework iAd
 OTHER_LDFLAGS[sdk=iphonesimulator*]=$(inherited) -weak_framework iAd

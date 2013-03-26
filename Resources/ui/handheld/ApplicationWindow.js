@@ -4,10 +4,6 @@ function ApplicationWindow() {
 
 	//storeData('harryfeng');
 	
-	getAppData(function(data){
-		storeData(data);
-		Ti.API.log(readTrombData());
-	});
 	
 	//var gotdata = getAppData(function(e){Ti.API.log(e)});
 

@@ -1,3 +1,3 @@
 #!/bin/sh
-"/Users/yuanfengfeng/Library/Application Support/Titanium/mobilesdk/osx/2.1.4.GA/iphone/builder.py" xcode
+"/Users/littleroominc-imac2/Library/Application Support/Titanium/mobilesdk/osx/2.1.4.GA/iphone/builder.py" xcode
 exit $?

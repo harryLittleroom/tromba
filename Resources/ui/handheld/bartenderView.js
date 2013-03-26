@@ -1,4 +1,7 @@
+var Data = require('ui/common/DAL');
+
 var bartenderView = function() {
+	var data = Data.readTrombData();
 	var self = Ti.UI.createView({
 		//backgroundImage : '/images/iphoneImage/bartenderImage.jpg',
 		height : scaleHeightByWidth('/images/iphoneImage/bartenderImage.jpg')
@@ -20,7 +23,7 @@ var bartenderView = function() {
 		borderRadius : 20,
 	});
 	var nameLabel = Ti.UI.createLabel({
-		text : 'Sandy',
+		text : data[0].contact.name,
 		color : 'white',
 		top : 15.35,
 		height : 'auto',
@@ -29,7 +32,7 @@ var bartenderView = function() {
 		left : 143,
 	})
 	var barLabel = Ti.UI.createLabel({
-		text : 'Sandy',
+		text : data[0].company.name,
 		color : '#c9823a',
 		top : 44.44,
 		height : 'auto',
@@ -38,7 +41,7 @@ var bartenderView = function() {
 
 	})
 	var drinkLabel = Ti.UI.createLabel({
-		text : 'Sandy',
+		text : 'Need drink name',
 		color : '#01b6fd',
 		top : 73.53,
 		height : 'auto',
@@ -60,7 +63,7 @@ var bartenderView = function() {
 	});
 	
 	var drinkName = Ti.UI.createLabel({
-		text : 'Raging Bull ',
+		text : 'Need drink name too ',
 		font : {
 			fontFamily : 'Zapfino',
 			fontSize: 18,
@@ -83,7 +86,7 @@ var bartenderView = function() {
 	
 	
 	var stepLabel = Ti.UI.createLabel({
-		text : 'A long label with\na few line breaks\nand unicode (UTF8)\nsymbols such as\na white chess piece \u2655\nand the euro symbol \u20ac\nlooks like this!\n',
+		text : Data.parseHtml(data[0].description),
 		font : {
 			fontSize : 12,
 			fontWeight : 'bold'
@@ -96,7 +99,7 @@ var bartenderView = function() {
 	}); 
 	
 	var quoatLabel = Ti.UI.createLabel({
-		text : 'this is a quato',
+		text : data[0].quote,
 		font:{
 			fontSize : 12,
 			fontWeight : 'bold'
@@ -109,7 +112,7 @@ var bartenderView = function() {
 	}); 
 	
 	var signatureLabel = Ti.UI.createLabel({
-		text : '~Sandy',
+		text : '~'+data[0].contact.name,
 		font : {
 			fontSize : 17,
 			fontWeight : 'bold'
@@ -128,12 +131,6 @@ var bartenderView = function() {
 	debugSlider(self,630, function(value) {
 		signatureLabel.top = value;
 	});
-	//Ti.API.log(sliderValue)
-	// self.titleControl.addEventListener('change', function(e) {
-	// sliderBarValue = e.source.value;
-	// Ti.API.log(sliderBarValue)
-	// })
-
 	self.add(header);
 	self.add(portraitImage);
 	self.add(nameLabel);
@@ -155,7 +152,6 @@ var bartenderView = function() {
 	shareButton.addEventListener('click', function() {
 		Ti.Facebook.appid = '234930539978070';
 		Ti.Facebook.permissions = ['publish_stream'];
-		// Permissions your app needs
 		Ti.Facebook.authorize();
 
 		var data = {
@@ -171,7 +167,6 @@ var bartenderView = function() {
 	});
 
 	self.add(shareButton);
-	//test home mac commit
 	return self;
 }
 module.exports = bartenderView;

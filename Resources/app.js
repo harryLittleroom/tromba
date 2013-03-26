@@ -35,7 +35,13 @@ if (Ti.version < 1.8) {
 		Window4 = require('ui/handheld/searchWindow');
 		windowArray = [Window1, Window2, Window3, Window4]
 	}
-
+	var Data = require('ui/common/DAL')
+	
+	Data.getAppData(function(data){
+		Data.storeData(data);
+		Ti.API.log(Data.readTrombData());
+	});
+	
 	var ApplicationTabGroup = require('ui/common/ApplicationTabGroup');
 	//	new ApplicationTabGroup(windowArray).open();
 
