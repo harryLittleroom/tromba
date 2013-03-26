@@ -3,9 +3,7 @@ var commonWindow = require('ui/handheld/ApplicationWindow');
 function storyWindow(commonProperties) {
 	var self = new commonWindow();
 	self.index = 0;
-	// self.addEventListener('focus', function(e) {
-	//
-	// });
+
 	var buttonEvent = function() {
 		var newScrollView = new addScrollView();
 		self.add(newScrollView);
@@ -23,15 +21,16 @@ function storyWindow(commonProperties) {
 			top : top,
 		});
 		button.addEventListener('click', function(e) {
-			
+			//	Ti.API.log(e.source.backgroundImage)
 			var winview = Ti.UI.createView({
 				//backgroundImage : '/images/iphoneImage/story.png',
 				//backgroundColor:'white',
+				width : platformWidth - 30,
 				height : getImageByFileName('/images/iphoneImage/story.png').height * platformWidth / getImageByFileName('/images/iphoneImage/story.png').width,
 			});
 			Ti.include('ui/handheld/tromba.json');
 			var labelArea2 = Ti.UI.createLabel({
-				text : storydata['story']['trombaStory'].title,
+				text : storydata['story'][e.source.name].title,
 				//backgroundColor:'white',
 				font : {
 					fontFamily : 'Zapfino'
@@ -40,7 +39,7 @@ function storyWindow(commonProperties) {
 			});
 
 			var labelArea3 = Ti.UI.createLabel({
-				text : storydata['story']['trombaStory'].text,
+				text : storydata['story'][e.source.name].text,
 				//	backgroundColor:'white',
 				font : {
 					fontFamily : 'uni 05_53'
@@ -48,10 +47,8 @@ function storyWindow(commonProperties) {
 				top : 60
 			})
 
-			Ti.API.log(storydata['story']);
-			winview.add(labelArea3)
 			winview.add(labelArea2)
-			//winview.add(labelArea3);
+			winview.add(labelArea3);
 			var newScrollView = new addScrollView();
 			newScrollView.add(winview);
 			var button = new addBackButton(self, newScrollView, function() {
@@ -67,9 +64,12 @@ function storyWindow(commonProperties) {
 		return button
 	}
 	var storyButton = new createButton('/images/iphoneImage/storyButton.png', 10);
-	var whyButton = new createButton('/images/iphoneImage/whyUseButton.png', 10 + getImageByFileName('/images/iphoneImage/tequilaButton.png').height / 2 + 10);
-	var tequilaButton = new createButton('/images/iphoneImage/tequilaButton.png', 10 + getImageByFileName('/images/iphoneImage/tequilaButton.png').height + 20);
+	storyButton.name = 'trombaStory';
 
+	var whyButton = new createButton('/images/iphoneImage/whyUseButton.png', 10 + getImageByFileName('/images/iphoneImage/tequilaButton.png').height / 2 + 10);
+	whyButton.name = 'thisApp';
+	var tequilaButton = new createButton('/images/iphoneImage/tequilaButton.png', 10 + getImageByFileName('/images/iphoneImage/tequilaButton.png').height + 20);
+	tequilaButton.name = 'tequilaTrutbs'
 	storyButton.addEventListener('click', function() {
 
 	});
