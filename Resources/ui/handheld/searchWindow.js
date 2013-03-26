@@ -21,7 +21,7 @@ function searchWindow(commonProperties) {
 	var bartenderImage = getImageByFileName('/images/iphoneImage/bartenderHeaderBackground.jpg');
 	var searchScrollView = function() {
 		return Ti.UI.createScrollView({
-			backgroundColor : 'white',
+			backgroundColor : 'transparent',
 			width : platformWidth,
 			height : platformHeight - 62.89308176100629 - 50 - 10 - 60,
 			top : 60
@@ -32,15 +32,24 @@ function searchWindow(commonProperties) {
 	var leftposition = 149;
 	textBox.addEventListener('change', function(e) {
 		var resultArray = new Array();
-		Ti.API.log(data);
-		delete searchView;
+		Ti.API.log(self.children);
+		if(searchView){
+			self.remove(searchView);
+			//Ti.API.log('clean');
+		};
+		for(var j=0;j<self.children.length;j++){
+			Ti.API.log(self.children[j].toString().search('TiUIScrollView'));
+			if(self.children[j].toString().search('TiUIScrollView')!=-1){
+				self.remove(self.children[j]);
+			}
+		}
 		var searchView = new searchScrollView();
 		for (var k = 0; k < data.length; k++) {
 			var index = JSON.stringify(data[k]).search(new RegExp(e.source.value, "i"))
 			if (index != -1) {
 				resultArray.push(data[k])
 			}
-			Ti.API.log(JSON.stringify(data[k]).search(new RegExp(e.source.value, "i")));
+			//Ti.API.log(JSON.stringify(data[k]).search(new RegExp(e.source.value, "i")));
 
 		}
 
