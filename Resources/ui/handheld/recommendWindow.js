@@ -19,9 +19,9 @@ function recommendWindow() {
 	
 	recoButton.addEventListener('click',function(){
 		var emailDialog = Ti.UI.createEmailDialog()
-		emailDialog.subject = "Thanks for your recommendation";
+		emailDialog.subject = "Bartender recommendation";
 		emailDialog.toRecipients = ['harry@littleroom.ca'];
-		emailDialog.messageBody = 'Please attach an image below:';
+		emailDialog.messageBody = 'This bartender has a great Tromba recipe!';
 		emailDialog.open();
 	})
 
