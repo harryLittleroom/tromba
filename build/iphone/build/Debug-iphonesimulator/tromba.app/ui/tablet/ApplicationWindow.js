@@ -1,1 +1,1 @@
-/Users/littleroominc-imac2/Documents/Titanium_Studio_Workspace/tromba/Resources/ui/tablet/ApplicationWindow.js
+/Users/yuanfengfeng/Dropbox/TitaniumProject/tromba/Resources/ui/tablet/ApplicationWindow.js

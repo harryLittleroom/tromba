@@ -127,7 +127,7 @@ var bartenderView = function() {
 	});
 
 	self.add(shareButton);
-
+	//test home mac commit
 	return self;
 }
 module.exports = bartenderView;

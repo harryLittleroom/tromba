@@ -1,3 +1,3 @@
 dependencies: \
-  /Users/littleroominc-imac2/Documents/Titanium_Studio_Workspace/tromba/build/iphone/Classes/KrollMethodDelegate.m \
-  /Users/littleroominc-imac2/Documents/Titanium_Studio_Workspace/tromba/build/iphone/Classes/KrollMethodDelegate.h
+  /Users/yuanfengfeng/Dropbox/TitaniumProject/tromba/build/iphone/Classes/KrollMethodDelegate.m \
+  /Users/yuanfengfeng/Dropbox/TitaniumProject/tromba/build/iphone/Classes/KrollMethodDelegate.h

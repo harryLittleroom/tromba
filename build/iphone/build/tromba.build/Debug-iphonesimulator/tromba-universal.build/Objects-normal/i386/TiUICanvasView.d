@@ -1,2 +1,2 @@
 dependencies: \
-  /Users/littleroominc-imac2/Documents/Titanium_Studio_Workspace/tromba/build/iphone/Classes/TiUICanvasView.m
+  /Users/yuanfengfeng/Dropbox/TitaniumProject/tromba/build/iphone/Classes/TiUICanvasView.m

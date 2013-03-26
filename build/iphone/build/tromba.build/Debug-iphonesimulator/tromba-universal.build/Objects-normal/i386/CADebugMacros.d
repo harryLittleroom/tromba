@@ -1,3 +1,3 @@
 dependencies: \
-  /Users/littleroominc-imac2/Documents/Titanium_Studio_Workspace/tromba/build/iphone/Classes/CADebugMacros.cpp \
-  /Users/littleroominc-imac2/Documents/Titanium_Studio_Workspace/tromba/build/iphone/Classes/CADebugMacros.h
+  /Users/yuanfengfeng/Dropbox/TitaniumProject/tromba/build/iphone/Classes/CADebugMacros.cpp \
+  /Users/yuanfengfeng/Dropbox/TitaniumProject/tromba/build/iphone/Classes/CADebugMacros.h
