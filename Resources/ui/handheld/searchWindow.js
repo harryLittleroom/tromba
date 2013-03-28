@@ -90,7 +90,16 @@ function searchWindow(commonProperties) {
 				width : 'auto',
 				left : leftposition,
 			});
-
+			
+			var portraitImage = Ti.UI.createImageView({
+		width : platformWidth / 3.5,
+		height : platformWidth / 3.5,
+		top : 10,
+		left : 10,
+		borderRadius : 20,
+		image:resultArray[i].contact.picture,
+	});
+			
 			var view = Titanium.UI.createView({
 				backgroundImage : '/images/iphoneImage/bartenderHeaderBackground.jpg',
 				width : platformWidth,
@@ -101,6 +110,7 @@ function searchWindow(commonProperties) {
 			view.add(nameLabel);
 			view.add(barLabel);
 			view.add(drinkLabel);
+			view.add(portraitImage);
 			searchView.add(view);
 			//	Ti.API.log(searchScrollView.height)
 		}

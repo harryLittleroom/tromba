@@ -16,7 +16,7 @@ function bartendersWindow(commonProperties) {
 			width : platformWidth,
 			height : bartenderImage.height * platformWidth / bartenderImage.width,
 			top : bartenderImage.height * platformWidth / bartenderImage.width * i,
-			index:i
+			index : i
 		});
 
 		var fontsize = 14;
@@ -30,6 +30,7 @@ function bartendersWindow(commonProperties) {
 			top : 21,
 			height : 'auto',
 			width : 'auto',
+			index : i,
 			//backgroundColor:'red',
 			left : leftposition,
 		})
@@ -43,10 +44,11 @@ function bartendersWindow(commonProperties) {
 			height : 'auto',
 			width : 'auto',
 			left : leftposition,
+			index : i
 
 		})
 		var drinkLabel = Ti.UI.createLabel({
-			text : 'Need drink name',
+			text : data[i].name,
 			font : {
 				fontSize : fontsize
 			},
@@ -55,11 +57,22 @@ function bartendersWindow(commonProperties) {
 			height : 'auto',
 			width : 'auto',
 			left : leftposition,
+			index : i
 		});
-
+		var portraitImage2 = Ti.UI.createImageView({
+		//backgroundColor:'white',
+		width : platformWidth / 3.5,
+		height : platformWidth / 3.5,
+		top : 10,
+		left : 10,
+		borderRadius : 20,
+		index : i,
+		backgroundImage:data[i].contact.picture
+		});
 		view.add(nameLabel);
 		view.add(barLabel);
 		view.add(drinkLabel);
+		view.add(portraitImage2);
 
 		debugSlider(self, 60, function(value) {
 			drinkLabel.top = value;

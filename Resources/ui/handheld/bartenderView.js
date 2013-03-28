@@ -16,12 +16,12 @@ var bartenderView = function(i) {
 	})
 
 	var portraitImage = Ti.UI.createImageView({
-		backgroundColor : '#8e583c',
 		width : platformWidth / 3.5,
 		height : platformWidth / 3.5,
 		top : 10,
 		left : 10,
 		borderRadius : 20,
+		image:data[i].contact.picture,
 	});
 	var nameLabel = Ti.UI.createLabel({
 		text : data[i].contact.name,
@@ -42,7 +42,7 @@ var bartenderView = function(i) {
 
 	})
 	var drinkLabel = Ti.UI.createLabel({
-		text : 'Need drink name',
+		text : data[i].name,
 		color : '#01b6fd',
 		top : 73.53,
 		height : 'auto',
@@ -54,7 +54,7 @@ var bartenderView = function(i) {
 		text : 'Recipe: ',
 		font : {
 			fontFamily : 'Zapfino',
-			fontSize: 18
+			fontSize: 14
 		},
 		color : 'black',
 		top : 133.93,
@@ -64,10 +64,10 @@ var bartenderView = function(i) {
 	});
 	
 	var drinkName = Ti.UI.createLabel({
-		text : 'Need drink name too ',
+		text : data[i].name,
 		font : {
 			fontFamily : 'Zapfino',
-			fontSize: 18,
+			fontSize: 14,
 			fontWeight:'bold'
 		},
 		color : 'black',
@@ -78,11 +78,12 @@ var bartenderView = function(i) {
 	});
 	
 	var drinkImage = Ti.UI.createImageView({
-		backgroundColor : '#8e583c',
-		width : platformWidth / 3.5,
-		height : platformWidth / 3.5,
+		//backgroundColor : '#8e583c',
+		width : platformWidth/2.5,
+		height : platformWidth/2.5,
 		borderRadius:20,
-		top:209.49,
+		top:190.49,
+		image:data[i].picture,
 	});
 	
 	
@@ -106,7 +107,7 @@ var bartenderView = function(i) {
 			fontWeight : 'bold'
 		},
 		color : 'white',
-		top : 509.93,
+		top : 459.93,
 		height : 'auto',
 		width : 'auto',
 		left : 28.03,
@@ -119,7 +120,7 @@ var bartenderView = function(i) {
 			fontWeight : 'bold'
 		},
 		color : 'white',
-		top : 614.93,
+		top : 554.93,
 		height : 'auto',
 		width : 'auto',
 		left : 76.03,

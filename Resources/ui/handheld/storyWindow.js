@@ -23,7 +23,7 @@ function storyWindow(commonProperties) {
 		button.addEventListener('click', function(e) {
 			//	Ti.API.log(e.source.backgroundImage)
 			var winview = Ti.UI.createView({
-				//backgroundImage : '/images/iphoneImage/story.png',
+				backgroundImage : '/images/iphoneImage/story.png',
 				//backgroundColor:'white',
 				width : platformWidth - 30,
 				height : getImageByFileName('/images/iphoneImage/story.png').height * platformWidth / getImageByFileName('/images/iphoneImage/story.png').width,
@@ -40,15 +40,15 @@ function storyWindow(commonProperties) {
 
 			var labelArea3 = Ti.UI.createLabel({
 				text : storydata['story'][e.source.name].text,
-				//	backgroundColor:'white',
+					backgroundColor:'white',
 				font : {
 					fontFamily : 'uni 05_53'
 				},
 				top : 60
 			})
 
-			winview.add(labelArea2)
-			winview.add(labelArea3);
+			// winview.add(labelArea2)
+			// winview.add(labelArea3);
 			var newScrollView = new addScrollView();
 			newScrollView.add(winview);
 			var button = new addBackButton(self, newScrollView, function() {
