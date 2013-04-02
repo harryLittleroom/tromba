@@ -1,7 +1,6 @@
 var Data = require('ui/common/DAL');
 
-var bartenderView = function(i) {
-
+var bartenderView = function(sourceID) {
 	var data = Data.readTrombData();
 	var self = Ti.UI.createView({
 		//backgroundImage : '/images/iphoneImage/bartenderImage.jpg',
@@ -21,10 +20,10 @@ var bartenderView = function(i) {
 		top : 10,
 		left : 10,
 		borderRadius : 20,
-		image:data[i].contact.picture,
+		image:sourceID.contact.picture,
 	});
 	var nameLabel = Ti.UI.createLabel({
-		text : data[i].contact.name,
+		text : sourceID.contact.name,
 		color : 'white',
 		top : 15.35,
 		height : 'auto',
@@ -33,7 +32,7 @@ var bartenderView = function(i) {
 		left : 143,
 	})
 	var barLabel = Ti.UI.createLabel({
-		text : data[i].company.name,
+		text : sourceID.company.name,
 		color : '#c9823a',
 		top : 44.44,
 		height : 'auto',
@@ -42,7 +41,7 @@ var bartenderView = function(i) {
 
 	})
 	var drinkLabel = Ti.UI.createLabel({
-		text : data[i].name,
+		text : sourceID.name,
 		color : '#01b6fd',
 		top : 73.53,
 		height : 'auto',
@@ -64,7 +63,7 @@ var bartenderView = function(i) {
 	});
 	
 	var drinkName = Ti.UI.createLabel({
-		text : data[i].name,
+		text : sourceID.name,
 		font : {
 			fontFamily : 'Zapfino',
 			fontSize: 14,
@@ -83,12 +82,12 @@ var bartenderView = function(i) {
 		height : platformWidth/2.5,
 		borderRadius:20,
 		top:190.49,
-		image:data[i].picture,
+		image:sourceID.picture,
 	});
 	
 	
 	var stepLabel = Ti.UI.createLabel({
-		text : Data.parseHtml(data[i].description),
+		text : Data.parseHtml(sourceID.description),
 		font : {
 			fontSize : 12,
 			fontWeight : 'bold'
@@ -101,7 +100,7 @@ var bartenderView = function(i) {
 	}); 
 	
 	var quoatLabel = Ti.UI.createLabel({
-		text : data[i].quote,
+		text : sourceID.quote,
 		font:{
 			fontSize : 12,
 			fontWeight : 'bold'
@@ -114,7 +113,7 @@ var bartenderView = function(i) {
 	}); 
 	
 	var signatureLabel = Ti.UI.createLabel({
-		text : '~'+data[i].contact.name,
+		text : '~'+sourceID.contact.name,
 		font : {
 			fontSize : 17,
 			fontWeight : 'bold'

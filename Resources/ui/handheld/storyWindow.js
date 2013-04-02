@@ -21,7 +21,6 @@ function storyWindow(commonProperties) {
 			top : top,
 		});
 		button.addEventListener('click', function(e) {
-			//	Ti.API.log(e.source.backgroundImage)
 			var winview = Ti.UI.createView({
 				backgroundImage : '/images/iphoneImage/story.png',
 				//backgroundColor:'white',

@@ -27,19 +27,15 @@ function searchWindow(commonProperties) {
 			top : 60
 		})
 	}
-	
 	var fontsize = 14;
 	var leftposition = 149;
 	textBox.addEventListener('change', function(e) {
 		var resultArray = new Array();
-		Ti.API.log(self.children);
-		if(searchView){
+		if (searchView) {
 			self.remove(searchView);
-			//Ti.API.log('clean');
 		};
-		for(var j=0;j<self.children.length;j++){
-			Ti.API.log(self.children[j].toString().search('TiUIScrollView'));
-			if(self.children[j].toString().search('TiUIScrollView')!=-1){
+		for (var j = 0; j < self.children.length; j++) {
+			if (self.children[j].toString().search('TiUIScrollView') != -1) {
 				self.remove(self.children[j]);
 			}
 		}
@@ -49,8 +45,6 @@ function searchWindow(commonProperties) {
 			if (index != -1) {
 				resultArray.push(data[k])
 			}
-			//Ti.API.log(JSON.stringify(data[k]).search(new RegExp(e.source.value, "i")));
-
 		}
 
 		for (var i = 0; i < resultArray.length; i++) {
@@ -66,6 +60,7 @@ function searchWindow(commonProperties) {
 				width : 'auto',
 				//backgroundColor:'red',
 				left : leftposition,
+				sourceID:resultArray[i],
 			})
 			var barLabel = Ti.UI.createLabel({
 				text : resultArray[i].company.name,
@@ -77,6 +72,7 @@ function searchWindow(commonProperties) {
 				height : 'auto',
 				width : 'auto',
 				left : leftposition,
+				sourceID:resultArray[i],
 
 			})
 			var drinkLabel = Ti.UI.createLabel({
@@ -89,30 +85,49 @@ function searchWindow(commonProperties) {
 				height : 'auto',
 				width : 'auto',
 				left : leftposition,
+				sourceID:resultArray[i],
 			});
-			
+
 			var portraitImage = Ti.UI.createImageView({
-		width : platformWidth / 3.5,
-		height : platformWidth / 3.5,
-		top : 10,
-		left : 10,
-		borderRadius : 20,
-		image:resultArray[i].contact.picture,
-	});
-			
+				width : platformWidth / 3.5,
+				height : platformWidth / 3.5,
+				top : 10,
+				left : 10,
+				borderRadius : 20,
+				image : resultArray[i].contact.picture,
+				sourceID:resultArray[i],
+			});
+
 			var view = Titanium.UI.createView({
 				backgroundImage : '/images/iphoneImage/bartenderHeaderBackground.jpg',
 				width : platformWidth,
 				height : bartenderImage.height * platformWidth / bartenderImage.width,
 				top : bartenderImage.height * platformWidth / bartenderImage.width * i,
-				index : i
+				index : i,
+				sourceID:resultArray[i],
 			});
 			view.add(nameLabel);
 			view.add(barLabel);
 			view.add(drinkLabel);
 			view.add(portraitImage);
 			searchView.add(view);
-			//	Ti.API.log(searchScrollView.height)
+
+			view.addEventListener('click', function(e) {
+				self.remove(searchView);
+				self.remove(textBox);
+				var winview = require('ui/handheld/bartenderView');
+				Ti.API.log(e.source);
+				var winview = new winview(e.source.sourceID);
+				var scrollViewInside = new addScrollView();
+				var button = new addBackButton(self, scrollViewInside, function() {
+					self.add(searchView);
+					self.add(textBox);
+				});
+				scrollViewInside.zIndex = 9;
+				//	scrollViewInside.backgroundColor='green';
+				scrollViewInside.add(winview)
+				self.add(scrollViewInside);
+			})
 		}
 		self.add(searchView);
 	})

@@ -16,6 +16,7 @@ function bartendersWindow(commonProperties) {
 			width : platformWidth,
 			height : bartenderImage.height * platformWidth / bartenderImage.width,
 			top : bartenderImage.height * platformWidth / bartenderImage.width * i,
+			sourceID:data[i],
 			index : i
 		});
 
@@ -31,6 +32,7 @@ function bartendersWindow(commonProperties) {
 			height : 'auto',
 			width : 'auto',
 			index : i,
+			sourceID:data[i],
 			//backgroundColor:'red',
 			left : leftposition,
 		})
@@ -44,6 +46,7 @@ function bartendersWindow(commonProperties) {
 			height : 'auto',
 			width : 'auto',
 			left : leftposition,
+			sourceID:data[i],
 			index : i
 
 		})
@@ -57,6 +60,7 @@ function bartendersWindow(commonProperties) {
 			height : 'auto',
 			width : 'auto',
 			left : leftposition,
+			sourceID:data[i],
 			index : i
 		});
 		var portraitImage2 = Ti.UI.createImageView({
@@ -65,8 +69,8 @@ function bartendersWindow(commonProperties) {
 		height : platformWidth / 3.5,
 		top : 10,
 		left : 10,
-		//borderRadius : 20,
 		index : i,
+		sourceID:data[i],
 		backgroundImage:data[i].contact.picture
 		});
 		view.add(nameLabel);
@@ -85,7 +89,7 @@ function bartendersWindow(commonProperties) {
 
 			self.remove(scrollView);
 			var winview = require('ui/handheld/bartenderView');
-			var winview = new winview(e.source.index);
+			var winview = new winview(e.source.sourceID);
 			var scrollViewInside = new addScrollView();
 			var button = new addBackButton(self, scrollViewInside, function() {
 				self.add(scrollView);
@@ -95,7 +99,7 @@ function bartendersWindow(commonProperties) {
 			scrollViewInside.add(winview)
 			self.add(scrollViewInside);
 
-		})
+		});
 		scrollView.add(view);
 	}	
 	self.add(scrollView);
