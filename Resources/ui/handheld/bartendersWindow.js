@@ -65,7 +65,7 @@ function bartendersWindow(commonProperties) {
 		height : platformWidth / 3.5,
 		top : 10,
 		left : 10,
-		borderRadius : 20,
+		//borderRadius : 20,
 		index : i,
 		backgroundImage:data[i].contact.picture
 		});
@@ -97,8 +97,7 @@ function bartendersWindow(commonProperties) {
 
 		})
 		scrollView.add(view);
-	}
-
+	}	
 	self.add(scrollView);
 	return self;
 };
