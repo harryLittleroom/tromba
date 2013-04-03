@@ -26,7 +26,7 @@ var bartenderView = function(sourceID) {
 	var nameLabel = Ti.UI.createLabel({
 		text : sourceID.contact.name,
 		color : 'white',
-		top : 15.35,
+		top : 19.35,
 		height : 'auto',
 		width : 'auto',
 		//backgroundColor:'red',
@@ -38,7 +38,7 @@ var bartenderView = function(sourceID) {
 	var barLabel = Ti.UI.createLabel({
 		text : sourceID.company.name,
 		color : '#c9823a',
-		top : 44.44,
+		top : 47.44,
 		height : 'auto',
 		width : 'auto',
 		left : 143,
@@ -50,7 +50,7 @@ var bartenderView = function(sourceID) {
 	var drinkLabel = Ti.UI.createLabel({
 		text : sourceID.name,
 		color : '#01b6fd',
-		top : 73.53,
+		top : 76.53,
 		height : 'auto',
 		width : 'auto',
 		left : 143,
@@ -83,11 +83,10 @@ var bartenderView = function(sourceID) {
 		top : 133.93,
 		height : 'auto',
 		width : 'auto',
-		left : 136.03,
+		//left : 136.03,
 	});
 	
 	var drinkImage = Ti.UI.createImageView({
-		//backgroundColor : '#8e583c',
 		width : platformWidth/2.5,
 		height : platformWidth/2.5,
 		borderRadius:20,
@@ -148,7 +147,7 @@ var bartenderView = function(sourceID) {
 	self.add(nameLabel);
 	self.add(barLabel);
 	self.add(drinkLabel);
-	self.add(recipeLabel);
+	//self.add(recipeLabel);
 	self.add(drinkName);
 	self.add(drinkImage);
 	self.add(stepLabel);

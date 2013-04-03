@@ -28,7 +28,7 @@ function bartendersWindow(commonProperties) {
 				fontSize : fontsize
 			},
 			color : 'white',
-			top : 21,
+			top : 18,
 			height : 'auto',
 			width : 'auto',
 			index : i,
@@ -42,7 +42,7 @@ function bartendersWindow(commonProperties) {
 				fontSize : fontsize
 			},
 			color : '#c9823a',
-			top : 49,
+			top : 46,
 			height : 'auto',
 			width : 'auto',
 			left : leftposition,
@@ -56,7 +56,7 @@ function bartendersWindow(commonProperties) {
 				fontSize : fontsize
 			},
 			color : '#01b6fd',
-			top : 78,
+			top : 75,
 			height : 'auto',
 			width : 'auto',
 			left : leftposition,
