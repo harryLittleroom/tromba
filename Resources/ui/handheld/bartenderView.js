@@ -13,7 +13,8 @@ var bartenderView = function(sourceID) {
 		top : 0,
 		backgroundColor : 'red'
 	})
-
+	
+	var fontsize = 14;
 	var portraitImage = Ti.UI.createImageView({
 		width : platformWidth / 3.5,
 		height : platformWidth / 3.5,
@@ -30,6 +31,9 @@ var bartenderView = function(sourceID) {
 		width : 'auto',
 		//backgroundColor:'red',
 		left : 143,
+		font:{
+			fontSize:fontsize
+		}
 	})
 	var barLabel = Ti.UI.createLabel({
 		text : sourceID.company.name,
@@ -38,6 +42,9 @@ var bartenderView = function(sourceID) {
 		height : 'auto',
 		width : 'auto',
 		left : 143,
+		font:{
+			fontSize:fontsize
+		}
 
 	})
 	var drinkLabel = Ti.UI.createLabel({
@@ -47,6 +54,9 @@ var bartenderView = function(sourceID) {
 		height : 'auto',
 		width : 'auto',
 		left : 143,
+		font:{
+			fontSize:fontsize
+		}
 	});
 
 	var recipeLabel = Ti.UI.createLabel({
@@ -67,7 +77,7 @@ var bartenderView = function(sourceID) {
 		font : {
 			fontFamily : 'Zapfino',
 			fontSize: 14,
-			fontWeight:'bold'
+			fontWeight:'bold',
 		},
 		color : 'black',
 		top : 133.93,
@@ -158,11 +168,11 @@ var bartenderView = function(sourceID) {
 
 		var data = {
 			link : "http://www.tequilatromba.com/",
-			name : "Tromba Mobile",
-			message : "Find out more awesome bartender with Tromba Mobile",
-			caption : "Tromba Mobile",
+			name : "Tromba Tequila",
+			message : "Check out "+sourceID.contact.name+"'s Tromba recipe: "+sourceID.name,
+			caption : sourceID.contact.name,
 			picture : sourceID.contact.picture,
-			description : "To find out more recipe, please click here to download the app"
+			description : "Check out "+sourceID.contact.name+"'s Tromba recipe: "+sourceID.name,
 		};
 		Titanium.Facebook.dialog("feed", data, function(e) {
 		});

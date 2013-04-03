@@ -71,7 +71,7 @@ function bartendersWindow(commonProperties) {
 		left : 10,
 		index : i,
 		sourceID:data[i],
-		backgroundImage:data[i].contact.picture
+		image:data[i].contact.picture
 		});
 		view.add(nameLabel);
 		view.add(barLabel);
