@@ -116,7 +116,6 @@ function searchWindow(commonProperties) {
 				self.remove(searchView);
 				self.remove(textBox);
 				var winview = require('ui/handheld/bartenderView');
-				Ti.API.log(e.source);
 				var winview = new winview(e.source.sourceID);
 				var scrollViewInside = new addScrollView();
 				var button = new addBackButton(self, scrollViewInside, function() {

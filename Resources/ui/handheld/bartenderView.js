@@ -161,7 +161,7 @@ var bartenderView = function(sourceID) {
 			name : "Tromba Mobile",
 			message : "Find out more awesome bartender with Tromba Mobile",
 			caption : "Tromba Mobile",
-			picture : "http://www.tequilatromba.com/images/site_logo.png",
+			picture : sourceID.contact.picture,
 			description : "To find out more recipe, please click here to download the app"
 		};
 		Titanium.Facebook.dialog("feed", data, function(e) {
