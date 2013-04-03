@@ -112,26 +112,29 @@ var bartenderView = function(sourceID) {
 	var quoatLabel = Ti.UI.createLabel({
 		text : '"'+sourceID.quote+'"',
 		font:{
-			fontSize : 12,
-			fontWeight : 'bold'
+			fontSize : 16,
+			fontWeight : 'bold',
+			fontFamily : 'Mrs Eaves OT'
 		},
 		color : 'white',
 		top : 459.93,
 		height : 'auto',
-		width : 'auto',
+		width : '80%',
 		left : 28.03,
+		//backgroundColor:'white'
 	}); 
 	
 	var signatureLabel = Ti.UI.createLabel({
 		text : '~'+sourceID.contact.name,
 		font : {
-			fontSize : 17,
-			fontWeight : 'bold'
+			fontSize : 15,
+			fontWeight : 'bold',
+			fontFamily : 'Zapfino',
 		},
 		color : 'white',
-		top : quoatLabel.top+70,
+		top : quoatLabel.top+80,
 		height : 'auto',
-		width : 'auto',
+		width : '80%',
 		//left : 76.03,
 		textAlign: Ti.UI.TEXT_ALIGNMENT_RIGHT,
 	}); 

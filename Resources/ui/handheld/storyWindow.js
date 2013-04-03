@@ -22,7 +22,7 @@ function storyWindow(commonProperties) {
 		});
 		button.addEventListener('click', function(e) {
 			var winview = Ti.UI.createView({
-				backgroundImage : '/images/iphoneImage/story.png',
+				//backgroundImage : '/images/iphoneImage/story.png',
 				//backgroundColor:'white',
 				width : platformWidth - 30,
 				height : getImageByFileName('/images/iphoneImage/story.png').height * platformWidth / getImageByFileName('/images/iphoneImage/story.png').width,
@@ -32,22 +32,26 @@ function storyWindow(commonProperties) {
 				text : storydata['story'][e.source.name].title,
 				//backgroundColor:'white',
 				font : {
-					fontFamily : 'Zapfino'
+					fontFamily : 'Zapfino',
+					fontSize:18,
 				},
 				top : 10
 			});
 
 			var labelArea3 = Ti.UI.createLabel({
 				text : storydata['story'][e.source.name].text,
-					backgroundColor:'white',
+					//backgroundColor:'white',
 				font : {
-					fontFamily : 'uni 05_53'
+					fontFamily : 'Mrs Eaves OT',
+					fontWeight : 'bold',
+					fontSize:18,
 				},
-				top : 60
+				textAlign: Ti.UI.TEXT_ALIGNMENT_CENTER,
+				top : 75
 			})
 
-			// winview.add(labelArea2)
-			// winview.add(labelArea3);
+			 winview.add(labelArea2)
+			 winview.add(labelArea3);
 			var newScrollView = new addScrollView();
 			newScrollView.add(winview);
 			var button = new addBackButton(self, newScrollView, function() {
