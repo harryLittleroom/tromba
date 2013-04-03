@@ -98,8 +98,9 @@ var bartenderView = function(sourceID) {
 	var stepLabel = Ti.UI.createLabel({
 		text : Data.parseHtml(sourceID.description),
 		font : {
-			fontSize : 12,
-			fontWeight : 'bold'
+			fontSize : 16,
+			fontWeight : 'bold',
+			fontFamily : 'Mrs Eaves OT'
 		},
 		color : 'black',
 		top : 337.93,
@@ -109,7 +110,7 @@ var bartenderView = function(sourceID) {
 	}); 
 	
 	var quoatLabel = Ti.UI.createLabel({
-		text : sourceID.quote,
+		text : '"'+sourceID.quote+'"',
 		font:{
 			fontSize : 12,
 			fontWeight : 'bold'
@@ -128,10 +129,11 @@ var bartenderView = function(sourceID) {
 			fontWeight : 'bold'
 		},
 		color : 'white',
-		top : 554.93,
+		top : quoatLabel.top+70,
 		height : 'auto',
 		width : 'auto',
-		left : 76.03,
+		//left : 76.03,
+		textAlign: Ti.UI.TEXT_ALIGNMENT_RIGHT,
 	}); 
 
 	
@@ -157,7 +159,7 @@ var bartenderView = function(sourceID) {
 		height : 30,
 		width : 263,
 		backgroundImage : '/images/iphoneImage/shareButton.png',
-		top :685
+		top :signatureLabel.top+60
 	});
 
 	shareButton.addEventListener('click', function() {

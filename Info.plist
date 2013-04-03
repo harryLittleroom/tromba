@@ -58,6 +58,8 @@
 		<string>/Resources/fonts/Lagarto-Roman.bmap</string>
 		<string>/fonts/uni0553.ttf</string>
 		<string>/Resources/fonts/uni0553.ttf</string>
+		<string>/fonts/MrsEavesOT-Roman.otf</string>
+		<string>/fonts/MrsEavesOT-Bold.otf</string>
 	</array>
 </dict>
 </plist>
