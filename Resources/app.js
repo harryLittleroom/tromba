@@ -36,18 +36,33 @@ if (Ti.version < 1.8) {
 		windowArray = [Window1, Window2, Window3, Window4]
 	}
 	var Data = require('ui/common/DAL')
-	
-	Data.getAppData(function(data){
-		Data.storeData(data);
-	});
-	
-	var ApplicationTabGroup = require('ui/common/ApplicationTabGroup');
-	//	new ApplicationTabGroup(windowArray).open();
+	if (Titanium.Network.networkType == Titanium.Network.NETWORK_NONE) {
+		//alert('Tromba: please connect to internet :)')
+		var data = Data.readTrombData();
+		if (data) {
+			var ApplicationTabGroup = require('ui/common/ApplicationTabGroup');
+			//	new ApplicationTabGroup(windowArray).open();
 
-	setTimeout(function() {
-		new ApplicationTabGroup(windowArray).open({
-			transition : Titanium.UI.iPhone.AnimationStyle.CURL_UP
+			setTimeout(function() {
+				new ApplicationTabGroup(windowArray).open({
+					transition : Titanium.UI.iPhone.AnimationStyle.CURL_UP
+				});
+			}, 1000);
+		}
+	} else {
+		Data.getAppData(function(data) {
+			Data.storeData(data);
 		});
-	}, 1000);
-	
+
+		var ApplicationTabGroup = require('ui/common/ApplicationTabGroup');
+		//	new ApplicationTabGroup(windowArray).open();
+
+		setTimeout(function() {
+			new ApplicationTabGroup(windowArray).open({
+				transition : Titanium.UI.iPhone.AnimationStyle.CURL_UP
+			});
+		}, 1000);
+
+	}
+
 })();

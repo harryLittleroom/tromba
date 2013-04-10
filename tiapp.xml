@@ -13,7 +13,7 @@
         <target device="android">true</target>
         <target device="blackberry">false</target>
     </deployment-targets>
-    <sdk-version>2.1.4.GA</sdk-version>
+    <sdk-version>3.0.2.GA</sdk-version>
     <id>come.littleroom.tromba</id>
     <name>tromba</name>
     <version>1.0</version>
@@ -51,7 +51,5 @@
         </splash>
         <theme>default</theme>
     </mobileweb>
-    <modules>
-        <module platform="commonjs" version="2.3.0">ti.cloud</module>
-    </modules>
+    <modules/>
 </ti:app>

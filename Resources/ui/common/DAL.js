@@ -33,8 +33,15 @@ exports.storeData = function(data) {
 exports.readTrombData = function(){
 	file = Ti.Filesystem.getFile(Ti.Filesystem.applicationDataDirectory, "trombaData/data.js");
 	var blob = file.read();
-	var readText = JSON.parse(blob.text);
-	return readText;
+	if(blob){
+		var readText = JSON.parse(blob.text);
+		return readText;
+	}
+	else{
+		alert('Tromba:you must have internet connection for the first time');
+		return
+	}
+	
 };
 
 exports.parseHtml = function(htmlData){

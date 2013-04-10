@@ -1,0 +1,22 @@
+{
+	"target": "simulator",
+	"deployType": "development",
+	"deviceFamily": "iphone",
+	"iosSdkPath": "/Users/Harry/Library/Application Support/Titanium/mobilesdk/osx/3.0.2.GA/iphone",
+	"appGuid": "6eeae856-a977-421c-a5cf-82c222f14201",
+	"tiCoreHash": "fa476584d63923183b326150e75416b3",
+	"modulesHash": "d41d8cd98f00b204e9800998ecf8427e",
+	"gitHash": "5a77fe7",
+	"name": "tromba",
+	"id": "come.littleroom.tromba",
+	"analytics": true,
+	"publisher": "littleroom",
+	"url": "http://",
+	"version": "1.0",
+	"description": "not specified",
+	"copyright": "2013 by littleroominc-imac2",
+	"guid": "6eeae856-a977-421c-a5cf-82c222f14201",
+	"skipJSMinification": false,
+	"forceCopy": false,
+	"forceCopyAll": false
+}
