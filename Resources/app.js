@@ -37,12 +37,9 @@ if (Ti.version < 1.8) {
 	}
 	var Data = require('ui/common/DAL')
 	if (Titanium.Network.networkType == Titanium.Network.NETWORK_NONE) {
-		//alert('Tromba: please connect to internet :)')
 		var data = Data.readTrombData();
 		if (data) {
 			var ApplicationTabGroup = require('ui/common/ApplicationTabGroup');
-			//	new ApplicationTabGroup(windowArray).open();
-
 			setTimeout(function() {
 				new ApplicationTabGroup(windowArray).open({
 					transition : Titanium.UI.iPhone.AnimationStyle.CURL_UP

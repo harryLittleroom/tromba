@@ -4,7 +4,6 @@ function ApplicationWindow() {
 
 	//storeData('harryfeng');
 
-	//var gotdata = getAppData(function(e){Ti.API.log(e)});
 
 	var bottomTabWidth = platformWidth / 4;
 	var imageHeight = getImageByFileName("/images/iphoneImage/bartenderTab.jpg").height;

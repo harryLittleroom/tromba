@@ -3,7 +3,6 @@ var Data = require('ui/common/DAL');
 
 function bartendersWindow(commonProperties) {
 	var data = Data.readTrombData();
-	console.log(data);
 	var self = new commonWindow();
 	self.index = 1;
 	var topBarHeight = self.topBarHeight
