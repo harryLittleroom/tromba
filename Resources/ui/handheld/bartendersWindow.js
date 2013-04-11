@@ -36,6 +36,7 @@ function bartendersWindow(commonProperties) {
 			//backgroundColor:'red',
 			left : leftposition,
 		})
+		
 		var barLabel = Ti.UI.createLabel({
 			text : data[i].company.name,
 			font : {

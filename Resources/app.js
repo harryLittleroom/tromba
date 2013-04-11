@@ -17,6 +17,50 @@ if (Ti.version < 1.8) {
 
 // This is a single context application with mutliple windows in a stack
 (function() {
+
+	function loadComman() {
+		Window1 = require('ui/handheld/storyWindow');
+		Window2 = require('ui/handheld/bartendersWindow');
+		Window3 = require('ui/handheld/recommendWindow');
+		Window4 = require('ui/handheld/searchWindow');
+		windowArray = [Window1, Window2, Window3, Window4]
+
+		var Data = require('ui/common/DAL')
+		if (Titanium.Network.networkType == Titanium.Network.NETWORK_NONE) {
+			var data = Data.readTrombData();
+			if (data) {
+				var ApplicationTabGroup = require('ui/common/ApplicationTabGroup');
+				setTimeout(function() {
+					new ApplicationTabGroup(windowArray).open({
+						transition : Titanium.UI.iPhone.AnimationStyle.CURL_UP
+					});
+				}, 1000);
+			}
+		} else {
+			Data.getAppData(function(data) {
+				Data.storeData(data);
+			});
+
+			var ApplicationTabGroup = require('ui/common/ApplicationTabGroup');
+			//	new ApplicationTabGroup(windowArray).open();
+
+			setTimeout(function() {
+				new ApplicationTabGroup(windowArray).open({
+					transition : Titanium.UI.iPhone.AnimationStyle.CURL_UP
+				});
+			}, 1000);
+
+		}
+	}
+
+	function loadIphone() {
+
+	}
+
+	function loadAndroid() {
+
+	}
+
 	//determine platform and form factor and render approproate components
 	var osname = Ti.Platform.osname, version = Ti.Platform.version, height = Ti.Platform.displayCaps.platformHeight, width = Ti.Platform.displayCaps.platformWidth;
 
@@ -28,38 +72,19 @@ if (Ti.version < 1.8) {
 	var windowArray;
 	if (isTablet) {
 		Window = require('ui/tablet/ApplicationWindow');
-	} else {
+	} else if (osname === 'android') {
 		Window1 = require('ui/handheld/storyWindow');
 		Window2 = require('ui/handheld/bartendersWindow');
 		Window3 = require('ui/handheld/recommendWindow');
 		Window4 = require('ui/handheld/searchWindow');
 		windowArray = [Window1, Window2, Window3, Window4]
-	}
-	var Data = require('ui/common/DAL')
-	if (Titanium.Network.networkType == Titanium.Network.NETWORK_NONE) {
-		var data = Data.readTrombData();
-		if (data) {
-			var ApplicationTabGroup = require('ui/common/ApplicationTabGroup');
-			setTimeout(function() {
-				new ApplicationTabGroup(windowArray).open({
-					transition : Titanium.UI.iPhone.AnimationStyle.CURL_UP
-				});
-			}, 1000);
-		}
-	} else {
-		Data.getAppData(function(data) {
-			Data.storeData(data);
-		});
-
 		var ApplicationTabGroup = require('ui/common/ApplicationTabGroup');
-		//	new ApplicationTabGroup(windowArray).open();
+		
+		ApplicationTabGroup(windowArray).open();
 
-		setTimeout(function() {
-			new ApplicationTabGroup(windowArray).open({
-				transition : Titanium.UI.iPhone.AnimationStyle.CURL_UP
-			});
-		}, 1000);
-
+		var Data = require('ui/common/DAL')
+	} else {
+		loadComman()
 	}
 
 })();
