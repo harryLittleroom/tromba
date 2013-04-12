@@ -1,4 +1,4 @@
-var commonWindow = require('ui/handheld/ApplicationWindow');
+var commonWindow = require('ui/iphone/ApplicationWindow');
 
 function searchWindow(commonProperties) {
 	var self = new commonWindow();
@@ -115,7 +115,7 @@ function searchWindow(commonProperties) {
 			view.addEventListener('click', function(e) {
 				self.remove(searchView);
 				self.remove(textBox);
-				var winview = require('ui/handheld/bartenderView');
+				var winview = require('ui/iphone/bartenderView');
 				var winview = new winview(e.source.sourceID);
 				var scrollViewInside = new addScrollView();
 				var button = new addBackButton(self, scrollViewInside, function() {

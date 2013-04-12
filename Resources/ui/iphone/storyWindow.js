@@ -1,4 +1,4 @@
-var commonWindow = require('ui/handheld/ApplicationWindow');
+var commonWindow = require('ui/iphone/ApplicationWindow');
 
 function storyWindow(commonProperties) {
 	var self = new commonWindow();
@@ -27,7 +27,7 @@ function storyWindow(commonProperties) {
 				width : platformWidth - 30,
 				height : getImageByFileName('/images/iphoneImage/story.png').height * platformWidth / getImageByFileName('/images/iphoneImage/story.png').width,
 			});
-			Ti.include('ui/handheld/tromba.json');
+			Ti.include('ui/iphone/tromba.json');
 			var labelArea2 = Ti.UI.createLabel({
 				text : storydata['story'][e.source.name].title,
 				//backgroundColor:'white',

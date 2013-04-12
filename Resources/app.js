@@ -19,10 +19,10 @@ if (Ti.version < 1.8) {
 (function() {
 
 	function loadComman() {
-		Window1 = require('ui/handheld/storyWindow');
-		Window2 = require('ui/handheld/bartendersWindow');
-		Window3 = require('ui/handheld/recommendWindow');
-		Window4 = require('ui/handheld/searchWindow');
+		Window1 = require('ui/iphone/storyWindow');
+		Window2 = require('ui/iphone/bartendersWindow');
+		Window3 = require('ui/iphone/recommendWindow');
+		Window4 = require('ui/iphone/searchWindow');
 		windowArray = [Window1, Window2, Window3, Window4]
 
 		var Data = require('ui/common/DAL')
@@ -73,10 +73,10 @@ if (Ti.version < 1.8) {
 	if (isTablet) {
 		Window = require('ui/tablet/ApplicationWindow');
 	} else if (osname === 'android') {
-		Window1 = require('ui/handheld/storyWindow');
-		Window2 = require('ui/handheld/bartendersWindow');
-		Window3 = require('ui/handheld/recommendWindow');
-		Window4 = require('ui/handheld/searchWindow');
+		Window1 = require('ui/iphone/storyWindow');
+		Window2 = require('ui/iphone/bartendersWindow');
+		Window3 = require('ui/iphone/recommendWindow');
+		Window4 = require('ui/iphone/searchWindow');
 		windowArray = [Window1, Window2, Window3, Window4]
 		var ApplicationTabGroup = require('ui/common/ApplicationTabGroup');
 		

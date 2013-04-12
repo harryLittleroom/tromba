@@ -1,4 +1,4 @@
-var commonWindow = require('ui/handheld/ApplicationWindow');
+var commonWindow = require('ui/iphone/ApplicationWindow');
 
 
 function recommendWindow() {
