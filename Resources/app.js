@@ -23,7 +23,8 @@ if (Ti.version < 1.8) {
 		Window2 = require('ui/iphone/bartendersWindow');
 		Window3 = require('ui/iphone/recommendWindow');
 		Window4 = require('ui/iphone/searchWindow');
-		windowArray = [Window1, Window2, Window3, Window4]
+		Window5 = require('ui/iphone/homeScreen');
+		windowArray = [Window1, Window2, Window3, Window4,Window5]
 
 		var Data = require('ui/common/DAL')
 		if (Titanium.Network.networkType == Titanium.Network.NETWORK_NONE) {
@@ -73,16 +74,14 @@ if (Ti.version < 1.8) {
 	if (isTablet) {
 		Window = require('ui/tablet/ApplicationWindow');
 	} else if (osname === 'android') {
-		Window1 = require('ui/iphone/storyWindow');
-		Window2 = require('ui/iphone/bartendersWindow');
-		Window3 = require('ui/iphone/recommendWindow');
-		Window4 = require('ui/iphone/searchWindow');
+		Window1 = require('ui/android/testwindow');
+		Window2 = require('ui/android/testwindow');
+		Window3 = require('ui/android/testwindow');
+		Window4 = require('ui/android/testwindow');
 		windowArray = [Window1, Window2, Window3, Window4]
 		var ApplicationTabGroup = require('ui/common/ApplicationTabGroup');
 		
 		ApplicationTabGroup(windowArray).open();
-
-		var Data = require('ui/common/DAL')
 	} else {
 		loadComman()
 	}

@@ -14,7 +14,7 @@
         <target device="blackberry">false</target>
     </deployment-targets>
     <sdk-version>3.0.2.GA</sdk-version>
-    <id>come.littleroom.tromba</id>
+    <id>com.littleroominc.tromba</id>
     <name>tromba</name>
     <version>1.0</version>
     <publisher>littleroom</publisher>

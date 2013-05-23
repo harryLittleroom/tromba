@@ -6,7 +6,8 @@ function ApplicationTabGroup(Windows) {
 	var win1 = new Windows[0](), win2 = new Windows[1]();
 	win3 = new Windows[2]();
 	win4 = new Windows[3]();
-	var winArray = [win1, win2, win3, win4];
+	win5 = new Windows[4]();
+	var winArray = [win1, win2, win3, win4,win5];
 	var tabArray = [];
 
 	for (var i = 0; i < winArray.length; i++) {
@@ -22,7 +23,7 @@ function ApplicationTabGroup(Windows) {
 		self.addTab(tabArray[k]);
 		Ti.App.TabGroup = self;
 	}
-	self.tabs[1].active = true;
+	self.tabs[4].active = true;
 	return self;
 };
 

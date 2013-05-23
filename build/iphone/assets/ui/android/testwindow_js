@@ -1,0 +1,10 @@
+
+function testwindow() {
+	var self = Ti.UI.createWindow({
+		title:'android window'
+	})
+	
+	return self;
+};
+
+module.exports = testwindow;

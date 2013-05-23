@@ -23,7 +23,7 @@ function bartendersWindow(commonProperties) {
 		var fontsize = 14;
 		var leftposition = 149;
 		var nameLabel = Ti.UI.createLabel({
-			text : data[i].contact.name,
+			text : data[i].contact.name+'222',
 			font : {
 				fontSize : fontsize
 			},
