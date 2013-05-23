@@ -7,13 +7,17 @@ function ApplicationTabGroup(Windows) {
 	win3 = new Windows[2]();
 	win4 = new Windows[3]();
 	win5 = new Windows[4]();
-	var winArray = [win1, win2, win3, win4,win5];
+	var winArray = [win1, win2, win3, win4];
 	var tabArray = [];
+	var titleArray = ['Our Story','Recipes','Glossary','Find Tromba']
+	 var iconArray = ['/images/iphoneImage/icon_03.png', '/images/iphoneImage/drinkicon.png', '/images/iphoneImage/glossary2_03.png', '/images/iphoneImage/locationicon.png']
 
 	for (var i = 0; i < winArray.length; i++) {
 		var tab = Ti.UI.createTab({
+			title:titleArray[i],
 			window : winArray[i],
-			title : i
+			icon:iconArray[i],
+			visible:false,
 		});
 		winArray[i].containingTab = tab;
 		tabArray.push(tab)
@@ -23,7 +27,8 @@ function ApplicationTabGroup(Windows) {
 		self.addTab(tabArray[k]);
 		Ti.App.TabGroup = self;
 	}
-	self.tabs[4].active = true;
+	self.tabs[1].active = true;
+	
 	return self;
 };
 
