@@ -7,6 +7,7 @@
     <property name="acs-oauth-key-development" type="string">gjvVKCOrfKU2JonBL1RIF2yCt7AGgsu4</property>
     <property name="acs-api-key-development" type="string">ndz5VxnCejfoC2q1WhMceB3ijTuIfiNG</property>
     <deployment-targets>
+        <target device="tizen">false</target>
         <target device="mobileweb">true</target>
         <target device="iphone">true</target>
         <target device="ipad">true</target>

@@ -16,7 +16,7 @@
 	"description": "not specified",
 	"copyright": "2013 by littleroominc-imac2",
 	"guid": "6eeae856-a977-421c-a5cf-82c222f14201",
-	"skipJSMinification": false,
+	"skipJSMinification": true,
 	"forceCopy": false,
 	"forceCopyAll": false
 }
