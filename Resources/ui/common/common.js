@@ -92,11 +92,11 @@ var addTableView = function(targetWindow, imageViewArray, labelViewArray) {
 	var tableData = [];
 
 	var table = Ti.UI.createTableView({
-	objName : 'table',
-	backgroundColor:'black',
-	style: Ti.UI.iPhone.TableViewStyle.PLAIN,
-	separatorStyle: Titanium.UI.iPhone.TableViewSeparatorStyle.NONE,
-	separatorColor: 'transparent',
+		objName : 'table',
+		backgroundColor : 'black',
+		style : Ti.UI.iPhone.TableViewStyle.PLAIN,
+		separatorStyle : Titanium.UI.iPhone.TableViewSeparatorStyle.NONE,
+		separatorColor : 'transparent',
 	});
 
 	for (var i = 0; i < imageViewArray.length; i++) {
@@ -107,20 +107,21 @@ var addTableView = function(targetWindow, imageViewArray, labelViewArray) {
 			height : 120,
 			backgroundColor : "#212121",
 		});
-		
+		if(i%2==1)row.backgroundColor = '#2b2b2b';
 		console.log(imageViewArray[i]);
-		if(imageViewArray[i])row.add(imageViewArray[i]);
-		if(labelViewArray[i])row.add(labelViewArray[i]);
+		if (imageViewArray[i]) {
+			row.add(imageViewArray[i]);
+		}
+		if (labelViewArray[i])
+			row.add(labelViewArray[i]);
 		tableData.push(row);
 	}
 
 	table.setData(tableData);
 
-	table.addEventListener('swipe', function(e) {
+	table.addEventListener('click', function(e) {
 		if (e.source && e.source.objName !== 'table') {
-			Ti.API.info('Row swiped: ' + e.source);
-			Ti.API.info('Row swiped: ' + e.source.objName);
-			Ti.API.info('Row ID : ' + e.source.rowID);
+			console.log('click table');
 		}
 	});
 

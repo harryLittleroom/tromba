@@ -29,6 +29,16 @@ function drinkTypeWindow(commonProperties) {
 
 	}); 
 	
+	imageArray[2] = Ti.UI.createImageView({
+		height : 100,
+		width : 100,
+		image : '/images/iphoneImage/bartenderRow1.jpg',
+		left : 10,
+		top : 10,
+		bottom : 10,
+
+	}); 
+	
 	
 	var rightLabelView = Ti.UI.createView({
 		height : 100,
