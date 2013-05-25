@@ -8,7 +8,7 @@ var getImageByFileName = function(filePath) {
 	return image;
 };
 
-var scaleHeightByWidth = function(filePath){
+var scaleHeightByWidth = function(filePath) {
 	return getImageByFileName(filePath).height * platformWidth / getImageByFileName(filePath).width
 }
 //call this function to add a button at the top left cornor
@@ -46,22 +46,84 @@ var addScrollView = function() {
 	return scrollview;
 };
 
-
-
-var debugSlider = function(targetWindow,top,callBack){
+//is used to move element up and down with a slide bar
+var debugSlider = function(targetWindow, top, callBack) {
 	var slider = Titanium.UI.createSlider({
 		top : top,
-		right:0,
+		right : 0,
 		min : 0,
 		max : 680,
 		width : '100%',
-		zIndex:100
+		zIndex : 100
 	});
-	slider.addEventListener('change',function(e){
+	slider.addEventListener('change', function(e) {
 		callBack(e.source.value);
-		
+
 	});
-	
-	if(debugMode)targetWindow.add(slider)
+
+	if (debugMode)
+		targetWindow.add(slider)
 	return slider;
+};
+
+//add the gray title bar below the window.
+var addTitleBar = function(title, targetWindow) {
+	var titleView = Ti.UI.createView({
+		backgroundColor : '#706f73',
+		height : 50,
+		width : 'auto',
+		top : 0,
+	});
+
+	var label = Ti.UI.createLabel({
+		color : 'white',
+		text : title,
+		font : {
+			fontSize : 28
+		},
+	});
+
+	titleView.add(label);
+	targetWindow.add(titleView);
+	return titleView;
+}
+var addTableView = function(targetWindow, imageViewArray, labelViewArray) {
+
+	var tableData = [];
+
+	var table = Ti.UI.createTableView({
+	objName : 'table',
+	backgroundColor:'black',
+	style: Ti.UI.iPhone.TableViewStyle.PLAIN,
+	separatorStyle: Titanium.UI.iPhone.TableViewSeparatorStyle.NONE,
+	separatorColor: 'transparent',
+	});
+
+	for (var i = 0; i < imageViewArray.length; i++) {
+		var row = Ti.UI.createTableViewRow({
+			className : 'row',
+			objName : 'row',
+			touchEnabled : true,
+			height : 120,
+			backgroundColor : "#212121",
+		});
+		
+		console.log(imageViewArray[i]);
+		if(imageViewArray[i])row.add(imageViewArray[i]);
+		if(labelViewArray[i])row.add(labelViewArray[i]);
+		tableData.push(row);
+	}
+
+	table.setData(tableData);
+
+	table.addEventListener('swipe', function(e) {
+		if (e.source && e.source.objName !== 'table') {
+			Ti.API.info('Row swiped: ' + e.source);
+			Ti.API.info('Row swiped: ' + e.source.objName);
+			Ti.API.info('Row ID : ' + e.source.rowID);
+		}
+	});
+
+	targetWindow.add(table);
+
 }
