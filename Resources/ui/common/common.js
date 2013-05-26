@@ -107,8 +107,8 @@ var addTableView = function(targetWindow, imageViewArray, labelViewArray) {
 			height : 120,
 			backgroundColor : "#212121",
 		});
-		if(i%2==1)row.backgroundColor = '#2b2b2b';
-		console.log(imageViewArray[i]);
+		if (i % 2 == 1)
+			row.backgroundColor = '#2b2b2b';
 		if (imageViewArray[i]) {
 			row.add(imageViewArray[i]);
 		}
@@ -122,6 +122,56 @@ var addTableView = function(targetWindow, imageViewArray, labelViewArray) {
 	table.addEventListener('click', function(e) {
 		if (e.source && e.source.objName !== 'table') {
 			console.log('click table');
+			// var childWin = Titanium.UI.createWindow({
+			// title : 'Tab 1 - Child Window',
+			// backgroundColor : '#fff',
+			// width : targetWindow.width,
+			// height : targetWindow.height-200
+			// });
+			//
+			// targetWindow.containingTab.add(childWin);
+			// targetWindow.containingTab.open();
+			// for (var x in targetWindow.containingTab) {
+			// console.log(targetWindow.containingTab.title);
+			// }
+			// console.log('--------------');
+			// for (var k in e) {
+			// console.log(k);
+			// }
+			// console.log('--------------');
+
+			var win1 = Titanium.UI.createWindow();
+
+			var win2 = Titanium.UI.createWindow({
+				backgroundColor : 'red',
+				title : 'Red Window'
+			});
+
+			var win3 = Titanium.UI.createWindow({
+				backgroundColor : 'blue',
+				title : 'Blue Window'
+			});
+
+			var button = Titanium.UI.createButton({
+				title : 'Open Blue Window'
+			});
+			button.addEventListener('click', function() {
+				nav.open(win3, {
+					animated : true
+				});
+			});
+			var nav = Titanium.UI.iPhone.createNavigationGroup({
+				window : win2
+			});
+			
+			var win4 = require('/ui/iphone/drinksListWindow');
+			var self22 = new win4();
+			//self22.open();
+			win2.add(button);
+			targetWindow.add(self22);
+			//win1.open();
+			//tab1.add(childWin);
+			//childWin.open();
 		}
 	});
 

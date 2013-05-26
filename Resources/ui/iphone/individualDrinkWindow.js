@@ -3,7 +3,8 @@ var Data = require('ui/common/DAL');
 var individualDrinkWindow = function(sourceID) {
 	var data = Data.readTrombData();
 	var self = Ti.UI.createView({
-		height : scaleHeightByWidth('/images/iphoneImage/bartenderImage.jpg')
+		height : scaleHeightByWidth('/images/iphoneImage/bartenderImage.jpg'),
+		backgroundColor:'#2b2b2b'
 	});
 	var header = Ti.UI.createImageView({
 		image : '/images/iphoneImage/bartenderHeaderBackground.jpg',
@@ -36,7 +37,7 @@ var individualDrinkWindow = function(sourceID) {
 	})
 	var barLabel = Ti.UI.createLabel({
 		text : sourceID.company.name,
-		color : '#c9823a',
+		color : 'white',
 		top : 47.44,
 		height : 'auto',
 		width : 'auto',
@@ -48,7 +49,7 @@ var individualDrinkWindow = function(sourceID) {
 	})
 	var drinkLabel = Ti.UI.createLabel({
 		text : sourceID.name,
-		color : '#01b6fd',
+		color : 'white',
 		top : 76.53,
 		height : 'auto',
 		width : 'auto',
@@ -64,7 +65,7 @@ var individualDrinkWindow = function(sourceID) {
 			fontFamily : 'Zapfino',
 			fontSize: 14
 		},
-		color : 'black',
+		color : 'white',
 		top : 133.93,
 		height : 'auto',
 		width : 'auto',
@@ -101,7 +102,7 @@ var individualDrinkWindow = function(sourceID) {
 			fontWeight : 'bold',
 			fontFamily : 'Mrs Eaves OT'
 		},
-		color : 'black',
+		color : 'white',
 		top : 337.93,
 		height : 'auto',
 		width : 'auto',

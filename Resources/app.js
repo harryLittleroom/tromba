@@ -23,7 +23,7 @@ if (Ti.version < 1.8) {
 		Window2 = require('ui/iphone/drinkTypeWindow');
 		Window3 = require('ui/iphone/recommendWindow');
 		Window4 = require('ui/iphone/searchWindow');
-		Window5 = require('ui/iphone/homeScreen');
+		Window5 = require('ui/iphone/drinksListWindow');
 		windowArray = [Window1, Window2, Window3, Window4,Window5]
 
 		var Data = require('ui/common/DAL')

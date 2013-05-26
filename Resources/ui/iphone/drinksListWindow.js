@@ -1,15 +1,18 @@
 var commonWindow = require('ui/iphone/ApplicationWindow');
 var Data = require('ui/common/DAL');
 
-function drinksListWindow(commonProperties) {
+function drinksListWindow() {
 	var data = Data.readTrombData();
 	var self = new commonWindow();
+	self.backgroundColor='#2b2b2b';
 	self.index = 1;
 	var topBarHeight = self.topBarHeight
 	var bottonBarHeight = self.bottomBarHeight
 	var bartenderImage = getImageByFileName('/images/iphoneImage/bartenderHeaderBackground.jpg')
 	var scrollView = new addScrollView();
-
+	
+	console.log(data.length);
+	
 	for (var i = 0; i < data.length; i++) {
 		var view = Titanium.UI.createView({
 			backgroundImage : '/images/iphoneImage/bartenderHeaderBackground.jpg',
@@ -89,7 +92,7 @@ function drinksListWindow(commonProperties) {
 		view.addEventListener('click', function(e) {
 
 			self.remove(scrollView);
-			var winview = require('ui/iphone/bartenderView');
+			var winview = require('ui/iphone/individualDrinkWindow');
 			var winview = new winview(e.source.sourceID);
 			var scrollViewInside = new addScrollView();
 			var button = new addBackButton(self, scrollViewInside, function() {
