@@ -87,7 +87,7 @@ var addTitleBar = function(title, targetWindow) {
 	targetWindow.add(titleView);
 	return titleView;
 }
-var addTableView = function(targetWindow, imageViewArray, labelViewArray) {
+var addTableView = function(targetWindow, navigationGroup, imageViewArray, labelViewArray) {
 
 	var tableData = [];
 
@@ -119,59 +119,17 @@ var addTableView = function(targetWindow, imageViewArray, labelViewArray) {
 
 	table.setData(tableData);
 
+	var drinklistwin_ini = require('/ui/iphone/drinksListWindow');
+	var drinklistwin = new drinklistwin_ini(navigationGroup);
+	
+	// var emptyView = Titanium.UI.createView({});
+	// drinklistwin.leftNavButton = emptyView 
+
 	table.addEventListener('click', function(e) {
 		if (e.source && e.source.objName !== 'table') {
-			console.log('click table');
-			// var childWin = Titanium.UI.createWindow({
-			// title : 'Tab 1 - Child Window',
-			// backgroundColor : '#fff',
-			// width : targetWindow.width,
-			// height : targetWindow.height-200
-			// });
-			//
-			// targetWindow.containingTab.add(childWin);
-			// targetWindow.containingTab.open();
-			// for (var x in targetWindow.containingTab) {
-			// console.log(targetWindow.containingTab.title);
-			// }
-			// console.log('--------------');
-			// for (var k in e) {
-			// console.log(k);
-			// }
-			// console.log('--------------');
-
-			var win1 = Titanium.UI.createWindow();
-
-			var win2 = Titanium.UI.createWindow({
-				backgroundColor : 'red',
-				title : 'Red Window'
+			navigationGroup.open(drinklistwin, {
+				animated : true
 			});
-
-			var win3 = Titanium.UI.createWindow({
-				backgroundColor : 'blue',
-				title : 'Blue Window'
-			});
-
-			var button = Titanium.UI.createButton({
-				title : 'Open Blue Window'
-			});
-			button.addEventListener('click', function() {
-				nav.open(win3, {
-					animated : true
-				});
-			});
-			var nav = Titanium.UI.iPhone.createNavigationGroup({
-				window : win2
-			});
-			
-			var win4 = require('/ui/iphone/drinksListWindow');
-			var self22 = new win4();
-			//self22.open();
-			win2.add(button);
-			targetWindow.add(self22);
-			//win1.open();
-			//tab1.add(childWin);
-			//childWin.open();
 		}
 	});
 

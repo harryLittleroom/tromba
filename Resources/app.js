@@ -22,9 +22,9 @@ if (Ti.version < 1.8) {
 		Window1 = require('ui/iphone/storyWindow');
 		Window2 = require('ui/iphone/drinkTypeWindow');
 		Window3 = require('ui/iphone/recommendWindow');
-		Window4 = require('ui/iphone/searchWindow');
+		Window4 = require('ui/iphone/mapWindow');
 		Window5 = require('ui/iphone/drinksListWindow');
-		windowArray = [Window1, Window2, Window3, Window4,Window5]
+		windowArray = [Window1, Window2, Window3, Window4, Window5]
 
 		var Data = require('ui/common/DAL')
 		if (Titanium.Network.networkType == Titanium.Network.NETWORK_NONE) {
@@ -80,7 +80,7 @@ if (Ti.version < 1.8) {
 		Window4 = require('ui/android/testwindow');
 		windowArray = [Window1, Window2, Window3, Window4]
 		var ApplicationTabGroup = require('ui/common/ApplicationTabGroup');
-		
+
 		ApplicationTabGroup(windowArray).open();
 	} else {
 		loadComman()

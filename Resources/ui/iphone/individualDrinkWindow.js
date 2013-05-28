@@ -1,7 +1,10 @@
+var commonWindow = require('ui/iphone/ApplicationWindow');
 var Data = require('ui/common/DAL');
 
 var individualDrinkWindow = function(sourceID) {
-	var data = Data.readTrombData();
+	//var data = Data.readTrombData();
+	var newwin = new commonWindow();
+	newwin.backgroundColor = '#2b2b2b';
 	var self = Ti.UI.createView({
 		height : scaleHeightByWidth('/images/iphoneImage/bartenderImage.jpg'),
 		backgroundColor:'#2b2b2b'
@@ -181,8 +184,11 @@ var individualDrinkWindow = function(sourceID) {
 		Titanium.Facebook.dialog("feed", data, function(e) {
 		});
 	});
-
+	var scrollViewInside = new addScrollView();
+	//scrollViewInside.backgroundColor='black';
+	scrollViewInside.add(self);
 	self.add(shareButton);
-	return self;
+	newwin.add(scrollViewInside);
+	return newwin;
 }
 module.exports = individualDrinkWindow;
