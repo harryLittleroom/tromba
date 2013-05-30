@@ -13,7 +13,7 @@ var mapWindow = function(sourceID) {
 		subtitle : 'Mountain View, CA',
 		pincolor : Titanium.Map.ANNOTATION_RED,
 		animate : true,
-		leftButton : '../images/appcelerator_small.png',
+		leftButton : Titanium.UI.iPhone.SystemButton.INFO_LIGHT,
 		myid : 1 // Custom property to uniquely identify this annotation.
 	});
 
@@ -31,7 +31,13 @@ var mapWindow = function(sourceID) {
 		annotations : [mountainView]
 	});
 	
+	mountainView.addEventListener('click',function(){
+		Titanium.Platform.openURL("http://maps.apple.com/maps?q=37.390749,-122.081651");
+	})
+	
 	mapwin.add(mapview);
+	
+	
 	return mapwin;
 }
 module.exports = mapWindow;

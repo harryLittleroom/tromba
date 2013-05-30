@@ -19,7 +19,7 @@ function ApplicationWindow() {
 		topBarHeight : 50,
 		bottomBarHeight : imageHeight * bottomTabWidth / imageWidth,
 		name : 'common window',
-
+		backgroundColor:'#2b2b2b'
 	});
 
 	return self;

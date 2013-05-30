@@ -21,7 +21,7 @@ if (Ti.version < 1.8) {
 	function loadComman() {
 		Window1 = require('ui/iphone/storyWindow');
 		Window2 = require('ui/iphone/drinkTypeWindow');
-		Window3 = require('ui/iphone/recommendWindow');
+		Window3 = require('ui/iphone/glossaryWindow');
 		Window4 = require('ui/iphone/mapWindow');
 		Window5 = require('ui/iphone/drinksListWindow');
 		windowArray = [Window1, Window2, Window3, Window4, Window5]
