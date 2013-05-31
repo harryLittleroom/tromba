@@ -39,8 +39,10 @@ var addScrollView = function() {
 		contentHeight : 'auto',
 		showVerticalScrollIndicator : true,
 		showHorizontalScrollIndicator : false,
-		height : platformHeight - 62.89308176100629 - 50 - 10,
+		//height : platformHeight - 62.89308176100629 - 50 - 10,
+		height : 'auto',
 		width : '100%',
+		layout : 'vertical',
 		top : 0,
 		zIndex : 8
 	});

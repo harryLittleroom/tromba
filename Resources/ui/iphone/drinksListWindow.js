@@ -20,7 +20,7 @@ function drinksListWindow(navigroup) {
 			backgroundColor:'#2b2b2b',
 			width : platformWidth,
 			height : bartenderImage.height * platformWidth / bartenderImage.width,
-			top : bartenderImage.height * platformWidth / bartenderImage.width * i,
+			//top : bartenderImage.height * platformWidth / bartenderImage.width * i,
 			sourceID : data[i],
 			index : i
 		});
