@@ -16,7 +16,8 @@ function drinksListWindow(navigroup) {
 
 	for (var i = 0; i < data.length; i++) {
 		var view = Titanium.UI.createView({
-			backgroundImage : '/images/iphoneImage/bartenderHeaderBackground.jpg',
+			//backgroundImage : '/images/iphoneImage/bartenderHeaderBackground.jpg',
+			backgroundColor:'#2b2b2b',
 			width : platformWidth,
 			height : bartenderImage.height * platformWidth / bartenderImage.width,
 			top : bartenderImage.height * platformWidth / bartenderImage.width * i,
@@ -30,7 +31,8 @@ function drinksListWindow(navigroup) {
 		var nameLabel = Ti.UI.createLabel({
 			text : data[i].name,
 			font : {
-				fontSize : fontsize
+				fontSize : fontsize,
+				
 			},
 			color : 'white',
 			top : 18,
@@ -47,7 +49,7 @@ function drinksListWindow(navigroup) {
 			font : {
 				fontSize : fontsize
 			},
-			color : '#c9823a',
+			color : 'white',
 			top : 46,
 			height : 'auto',
 			width : 'auto',
@@ -61,7 +63,7 @@ function drinksListWindow(navigroup) {
 			font : {
 				fontSize : fontsize
 			},
-			color : '#01b6fd',
+			color : 'white',
 			top : 75,
 			height : 'auto',
 			width : 'auto',
@@ -69,7 +71,7 @@ function drinksListWindow(navigroup) {
 			sourceID : data[i],
 			index : i
 		});
-		var portraitImage2 = Ti.UI.createImageView({
+		var drinkImge = Ti.UI.createImageView({
 			//backgroundColor:'white',
 			width : platformWidth / 3.5,
 			height : platformWidth / 3.5,
@@ -77,12 +79,12 @@ function drinksListWindow(navigroup) {
 			left : 10,
 			index : i,
 			sourceID : data[i],
-			image : 'data[i].contact.picture'
+			image : cmsUrl+data[i].drink
 		});
 		view.add(nameLabel);
 		view.add(barLabel);
 		view.add(drinkLabel);
-		view.add(portraitImage2);
+		view.add(drinkImge);
 
 		debugSlider(self, 60, function(value) {
 			drinkLabel.top = value;

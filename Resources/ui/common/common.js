@@ -1,5 +1,6 @@
 var platformWidth = Titanium.Platform.displayCaps.platformWidth;
 var platformHeight = Titanium.Platform.displayCaps.platformHeight;
+var cmsUrl = 'http://wf-tromba-staging.littleroominc.com'
 var debugMode = false;
 //get the image blob by file name
 var getImageByFileName = function(filePath) {
@@ -80,7 +81,8 @@ var addTitleBar = function(title, targetWindow) {
 		color : 'white',
 		text : title,
 		font : {
-			fontSize : 28
+			fontSize : 22,
+			fontFamily : 'Mrs Eaves OT'
 		},
 	});
 
@@ -88,7 +90,7 @@ var addTitleBar = function(title, targetWindow) {
 	targetWindow.add(titleView);
 	return titleView;
 }
-var addTableView = function(targetWindow, navigationGroup, imageViewArray, labelViewArray) {
+var addTableView = function(targetWindow, navigationGroup, imageViewArray, labelViewArray,top) {
 
 	var tableData = [];
 
@@ -99,6 +101,7 @@ var addTableView = function(targetWindow, navigationGroup, imageViewArray, label
 		separatorStyle : Titanium.UI.iPhone.TableViewSeparatorStyle.NONE,
 		separatorColor : 'transparent',
 	});
+	table.top = top;
 
 	for (var i = 0; i < imageViewArray.length; i++) {
 		var row = Ti.UI.createTableViewRow({
