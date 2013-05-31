@@ -71,6 +71,7 @@ function drinksListWindow(navigroup) {
 			sourceID : data[i],
 			index : i
 		});
+		
 		var drinkImge = Ti.UI.createImageView({
 			//backgroundColor:'white',
 			width : platformWidth / 3.5,
@@ -79,8 +80,9 @@ function drinksListWindow(navigroup) {
 			left : 10,
 			index : i,
 			sourceID : data[i],
-			image : cmsUrl+data[i].drink
+			image : cmsUrl+data[i].drinkfile
 		});
+		
 		view.add(nameLabel);
 		view.add(barLabel);
 		view.add(drinkLabel);

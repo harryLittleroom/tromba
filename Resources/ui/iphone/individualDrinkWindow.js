@@ -7,7 +7,7 @@ var individualDrinkWindow = function(sourceID) {
 	newwin.backgroundColor = '#2b2b2b';
 	var self = Ti.UI.createView({
 		height : scaleHeightByWidth('/images/iphoneImage/bartenderImage.jpg'),
-		backgroundColor:'#2b2b2b'
+		backgroundColor : '#2b2b2b'
 	});
 	var header = Ti.UI.createImageView({
 		image : '/images/iphoneImage/bartenderHeaderBackground.jpg',
@@ -16,7 +16,7 @@ var individualDrinkWindow = function(sourceID) {
 		top : 0,
 		backgroundColor : 'red'
 	})
-	
+
 	var fontsize = 14;
 	var portraitImage = Ti.UI.createImageView({
 		width : platformWidth / 3.5,
@@ -24,7 +24,7 @@ var individualDrinkWindow = function(sourceID) {
 		top : 10,
 		left : 10,
 		borderRadius : 20,
-		image:sourceID.filename,
+		image : sourceID.filename,
 	});
 	var nameLabel = Ti.UI.createLabel({
 		text : sourceID.name,
@@ -34,8 +34,8 @@ var individualDrinkWindow = function(sourceID) {
 		width : 'auto',
 		//backgroundColor:'red',
 		left : 143,
-		font:{
-			fontSize:fontsize
+		font : {
+			fontSize : fontsize
 		}
 	})
 	var barLabel = Ti.UI.createLabel({
@@ -45,8 +45,8 @@ var individualDrinkWindow = function(sourceID) {
 		height : 'auto',
 		width : 'auto',
 		left : 143,
-		font:{
-			fontSize:fontsize
+		font : {
+			fontSize : fontsize
 		}
 
 	})
@@ -57,8 +57,8 @@ var individualDrinkWindow = function(sourceID) {
 		height : 'auto',
 		width : 'auto',
 		left : 143,
-		font:{
-			fontSize:fontsize
+		font : {
+			fontSize : fontsize
 		}
 	});
 
@@ -66,7 +66,7 @@ var individualDrinkWindow = function(sourceID) {
 		text : 'Recipe: ',
 		font : {
 			fontFamily : 'Zapfino',
-			fontSize: 14
+			fontSize : 14
 		},
 		color : 'white',
 		top : 133.93,
@@ -74,13 +74,13 @@ var individualDrinkWindow = function(sourceID) {
 		width : 'auto',
 		left : 58.44,
 	});
-	
+
 	var drinkName = Ti.UI.createLabel({
 		text : sourceID.name,
 		font : {
 			fontFamily : 'Zapfino',
-			fontSize: 14,
-			fontWeight:'bold',
+			fontSize : 14,
+			fontWeight : 'bold',
 		},
 		color : 'black',
 		top : 133.93,
@@ -88,16 +88,15 @@ var individualDrinkWindow = function(sourceID) {
 		width : 'auto',
 		//left : 136.03,
 	});
-	
+
 	var drinkImage = Ti.UI.createImageView({
-		width : platformWidth/2.5,
-		height : platformWidth/2.5,
-		borderRadius:20,
-		top:190.49,
-		image:sourceID.filename,
+		width : platformWidth / 2.5,
+		height : platformWidth / 2.5,
+		borderRadius : 20,
+		top : 190.49,
+		image : sourceID.filename,
 	});
-	
-	
+
 	var stepLabel = Ti.UI.createLabel({
 		text : Data.parseHtml(sourceID.instructions),
 		font : {
@@ -110,11 +109,11 @@ var individualDrinkWindow = function(sourceID) {
 		height : 'auto',
 		width : 'auto',
 		left : 28.03,
-	}); 
-	
+	});
+
 	var quoatLabel = Ti.UI.createLabel({
-		text : '"'+sourceID.description+'"',
-		font:{
+		text : '"' + sourceID.description + '"',
+		font : {
 			fontSize : 16,
 			fontWeight : 'bold',
 			fontFamily : 'Mrs Eaves OT'
@@ -125,31 +124,30 @@ var individualDrinkWindow = function(sourceID) {
 		width : '80%',
 		left : 28.03,
 		//backgroundColor:'white'
-	}); 
-	
+	});
+
 	var signatureLabel = Ti.UI.createLabel({
-		text : '~'+sourceID.bartender,
+		text : '~' + sourceID.bartender,
 		font : {
 			fontSize : 15,
 			fontWeight : 'bold',
 			fontFamily : 'Zapfino',
 		},
 		color : 'white',
-		top : quoatLabel.top+80,
+		top : quoatLabel.top + 80,
 		height : 'auto',
 		width : '80%',
 		//left : 76.03,
-		textAlign: Ti.UI.TEXT_ALIGNMENT_RIGHT,
-	}); 
+		textAlign : Ti.UI.TEXT_ALIGNMENT_RIGHT,
+	});
 
-	
-	debugSlider(self,600, function(value) {
+	debugSlider(self, 600, function(value) {
 		signatureLabel.left = value;
 	});
-	debugSlider(self,630, function(value) {
+	debugSlider(self, 630, function(value) {
 		signatureLabel.top = value;
 	});
-	
+
 	self.add(header);
 	self.add(portraitImage);
 	self.add(nameLabel);
@@ -165,7 +163,7 @@ var individualDrinkWindow = function(sourceID) {
 		height : 30,
 		width : 263,
 		backgroundImage : '/images/iphoneImage/shareButton.png',
-		top :signatureLabel.top+60
+		top : signatureLabel.top + 60
 	});
 
 	shareButton.addEventListener('click', function() {
@@ -176,10 +174,10 @@ var individualDrinkWindow = function(sourceID) {
 		var data = {
 			link : "http://www.tequilatromba.com/",
 			name : "Tromba Tequila",
-			message : "Check out "+sourceID.name+"'s Tromba recipe: "+sourceID.name,
+			message : "Check out " + sourceID.name + "'s Tromba recipe: " + sourceID.name,
 			caption : sourceID.name,
 			picture : sourceID.filename,
-			description : "Check out "+sourceID.name+"'s Tromba recipe: "+sourceID.name,
+			description : "Check out " + sourceID.name + "'s Tromba recipe: " + sourceID.name,
 		};
 		Titanium.Facebook.dialog("feed", data, function(e) {
 		});
