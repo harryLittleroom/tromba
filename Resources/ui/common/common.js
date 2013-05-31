@@ -73,6 +73,7 @@ var addTitleBar = function(title, targetWindow) {
 		height : 50,
 		width : 'auto',
 		top : 0,
+		zIndex : 9,
 	});
 
 	var label = Ti.UI.createLabel({

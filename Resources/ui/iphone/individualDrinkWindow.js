@@ -24,10 +24,10 @@ var individualDrinkWindow = function(sourceID) {
 		top : 10,
 		left : 10,
 		borderRadius : 20,
-		image:sourceID.contact.picture,
+		image:sourceID.filename,
 	});
 	var nameLabel = Ti.UI.createLabel({
-		text : sourceID.contact.name,
+		text : sourceID.name,
 		color : 'white',
 		top : 19.35,
 		height : 'auto',
@@ -39,7 +39,7 @@ var individualDrinkWindow = function(sourceID) {
 		}
 	})
 	var barLabel = Ti.UI.createLabel({
-		text : sourceID.company.name,
+		text : sourceID.bar,
 		color : 'white',
 		top : 47.44,
 		height : 'auto',
@@ -94,12 +94,12 @@ var individualDrinkWindow = function(sourceID) {
 		height : platformWidth/2.5,
 		borderRadius:20,
 		top:190.49,
-		image:sourceID.picture,
+		image:sourceID.filename,
 	});
 	
 	
 	var stepLabel = Ti.UI.createLabel({
-		text : Data.parseHtml(sourceID.description),
+		text : Data.parseHtml(sourceID.instructions),
 		font : {
 			fontSize : 16,
 			fontWeight : 'bold',
@@ -113,7 +113,7 @@ var individualDrinkWindow = function(sourceID) {
 	}); 
 	
 	var quoatLabel = Ti.UI.createLabel({
-		text : '"'+sourceID.quote+'"',
+		text : '"'+sourceID.description+'"',
 		font:{
 			fontSize : 16,
 			fontWeight : 'bold',
@@ -128,7 +128,7 @@ var individualDrinkWindow = function(sourceID) {
 	}); 
 	
 	var signatureLabel = Ti.UI.createLabel({
-		text : '~'+sourceID.contact.name,
+		text : '~'+sourceID.bartender,
 		font : {
 			fontSize : 15,
 			fontWeight : 'bold',
@@ -176,10 +176,10 @@ var individualDrinkWindow = function(sourceID) {
 		var data = {
 			link : "http://www.tequilatromba.com/",
 			name : "Tromba Tequila",
-			message : "Check out "+sourceID.contact.name+"'s Tromba recipe: "+sourceID.name,
-			caption : sourceID.contact.name,
-			picture : sourceID.contact.picture,
-			description : "Check out "+sourceID.contact.name+"'s Tromba recipe: "+sourceID.name,
+			message : "Check out "+sourceID.name+"'s Tromba recipe: "+sourceID.name,
+			caption : sourceID.name,
+			picture : sourceID.filename,
+			description : "Check out "+sourceID.name+"'s Tromba recipe: "+sourceID.name,
 		};
 		Titanium.Facebook.dialog("feed", data, function(e) {
 		});

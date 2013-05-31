@@ -1,4 +1,7 @@
 eclipse.preferences.version=1
+provisioning_profiles/development/D3C262BF-D10E-438D-9F59-4A025388BF35/appid=com.littleroominc.trombatest
+provisioning_profiles/development/D3C262BF-D10E-438D-9F59-4A025388BF35/name=Tromba test
+provisioning_profiles/development/D3C262BF-D10E-438D-9F59-4A025388BF35/uuid=D3C262BF-D10E-438D-9F59-4A025388BF35
 provisioning_profiles/development/ED0E97F2-C683-4A5A-AD09-44FF987B6FA4/appid=*
 provisioning_profiles/development/ED0E97F2-C683-4A5A-AD09-44FF987B6FA4/name=FengiPhoneVideo
 provisioning_profiles/development/ED0E97F2-C683-4A5A-AD09-44FF987B6FA4/uuid=ED0E97F2-C683-4A5A-AD09-44FF987B6FA4

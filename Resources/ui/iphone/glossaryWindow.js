@@ -1,9 +1,10 @@
 var commonWindow = require('ui/iphone/ApplicationWindow');
+var Data = require('ui/common/DAL');
 
 function glossaryWindow() {
+	var data = Data.readTrombData('glossary');
 	var self = new commonWindow();
-
-	var term = ['Bananas', 'Strawberries', 'Mangos', 'Grapes'];
+	//var term = ['Bananas', 'Strawberries', 'Mangos', 'Grapes'];
 	var description = ['look like a d', 'look like a o', 'look like a long o', 'look like a small o'];
 	var descriptionText = Ti.UI.createLabel({
 		top:0,
@@ -13,7 +14,7 @@ function glossaryWindow() {
 	self.add(descriptionText);
 	var column = Ti.UI.createPickerColumn();
 
-	for (var i = 0, ilen = term.length; i < ilen; i++) {
+	for (var i = 0, ilen = data.length; i < ilen; i++) {
 		var row = Ti.UI.createPickerRow();
 
 		var label = Ti.UI.createLabel({
@@ -22,7 +23,7 @@ function glossaryWindow() {
 				fontSize : 20,
 				fontWeight : 'bold'
 			},
-			text : term[i],
+			text : data[i].term,
 			textAlign : 'left',
 			height : 'auto',
 			width : 'auto'
@@ -38,8 +39,7 @@ function glossaryWindow() {
 		selectionIndicator : true
 	});
 	picker.addEventListener('change', function(e) {
-		console.log('selected row index = '+e.rowIndex);
-		descriptionText.text = description[e.rowIndex];
+		descriptionText.text = data[e.rowIndex].description;
 	});
 	self.add(picker);
 

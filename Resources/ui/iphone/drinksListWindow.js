@@ -2,7 +2,8 @@ var commonWindow = require('ui/iphone/ApplicationWindow');
 var Data = require('ui/common/DAL');
 
 function drinksListWindow(navigroup) {
-	var data = Data.readTrombData();
+	var data = Data.readTrombData('drinks');
+	//console.log(data);
 	var self = new commonWindow();
 	self.backgroundColor = '#2b2b2b';
 	self.index = 1;
@@ -11,7 +12,7 @@ function drinksListWindow(navigroup) {
 	var bartenderImage = getImageByFileName('/images/iphoneImage/bartenderHeaderBackground.jpg')
 	var scrollView = new addScrollView();
 
-	console.log(data.length);
+	//console.log(data.length);
 
 	for (var i = 0; i < data.length; i++) {
 		var view = Titanium.UI.createView({
@@ -25,8 +26,9 @@ function drinksListWindow(navigroup) {
 
 		var fontsize = 14;
 		var leftposition = 149;
+		//name of drink
 		var nameLabel = Ti.UI.createLabel({
-			text : data[i].contact.name + '222',
+			text : data[i].name,
 			font : {
 				fontSize : fontsize
 			},
@@ -41,7 +43,7 @@ function drinksListWindow(navigroup) {
 		})
 
 		var barLabel = Ti.UI.createLabel({
-			text : data[i].company.name,
+			text : data[i].bar,
 			font : {
 				fontSize : fontsize
 			},

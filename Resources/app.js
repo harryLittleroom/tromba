@@ -38,10 +38,26 @@ if (Ti.version < 1.8) {
 				}, 1000);
 			}
 		} else {
-			Data.getAppData(function(data) {
+			Data.getAppData('drinks', function(data) {
+				//console.log(data);
 				Data.storeData(data);
+				getglossary()
 			});
+			function getglossary() {
+				Data.getAppData('glossary', function(data) {
+					//console.log(data);
+					Data.storeData(data);
+					getStory()
+				});
+			}
 
+			function getStory() {
+				Data.getAppData('story', function(data) {
+					//console.log(data);
+					Data.storeData(data);
+				});
+			}
+			function loadApplication(){};
 			var ApplicationTabGroup = require('ui/common/ApplicationTabGroup');
 			//	new ApplicationTabGroup(windowArray).open();
 
