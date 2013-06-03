@@ -27,8 +27,8 @@ var mapWindow = function(sourceID) {
 	});
 
 	var mountainView = Titanium.Map.createAnnotation({
-		latitude : currentlatitude,
-		longitude : currentlongitude,
+		latitude : 43.645972,
+		longitude : -79.399079,
 		title : "Appcelerator Headquarters",
 		subtitle : 'Mountain View, CA',
 		pincolor : Titanium.Map.ANNOTATION_RED,

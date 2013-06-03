@@ -153,9 +153,7 @@ var individualDrinkWindow = function(sourceID) {
 			height : Titanium.UI.SIZE,
 		});
 
-		
-
-		function createButton(title) {
+		function createButton(title,top) {
 			var button = Ti.UI.createButton({
 				title : title,
 				width : "90%",
@@ -184,24 +182,35 @@ var individualDrinkWindow = function(sourceID) {
 				borderWidth : 1,
 				borderColor : '#010101'
 			});
-			
+			if(top)button.top=top;
 			return button;
 		};
-
-		var shareButton = new createButton('Share');
-		var mapButton =  new createButton('Map');
 		
+		var socialView = Ti.UI.createView({
+			width:'100%',
+			height:Titanium.UI.SIZE,
+			layout:'vertical'
+		})
+		var shareButton = new createButton('Share');
+		var mapButton = new createButton('Map');
+
+		var facebookButton = new createButton('Facebook');
+		var twitterButton = new createButton('Twitter');
 		var cancelButton = new createButton('Cancel');
-		cancelButton.addEventListener('click',function(e){
+		socialView.add(facebookButton);
+		socialView.add(twitterButton);
+		socialView.add(cancelButton);
+
+		cancelButton.addEventListener('click', function(e) {
 			sharewindow.close();
 		});
-		
+
 		var sharewindow = Titanium.UI.createWindow({
-			navBarHidden:true,
-			backgroundColor:'#212121'
+			navBarHidden : true,
+			backgroundColor : '#212121'
 		});
-		
-		sharewindow.add(cancelButton);
+
+		sharewindow.add(socialView);
 
 		mapButton.addEventListener('click', function(e) {
 			console.log('click map button');
