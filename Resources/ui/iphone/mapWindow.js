@@ -3,7 +3,7 @@ var Data = require('ui/common/DAL');
 
 var mapWindow = function(sourceID) {
 	//var data = Data.readTrombData();
-
+	var data = Data.readTrombData('drinks');
 	//load the mapwindow by clicking the tab
 	function loadbyTab() {
 		var mapwin = new commonWindow();
@@ -28,24 +28,44 @@ var mapWindow = function(sourceID) {
 
 			// we use the above data the way we need it
 		});
+		var annotationPointArray = [];
 
-		var mountainView = Titanium.Map.createAnnotation({
-			latitude : 43.645972,
-			longitude : -79.399079,
-			title : "Appcelerator Headquarters",
-			subtitle : 'Mountain View, CA',
-			pincolor : Titanium.Map.ANNOTATION_RED,
-			animate : true,
-			leftButton : Titanium.UI.iPhone.SystemButton.INFO_LIGHT,
-			myid : 1 // Custom property to uniquely identify this annotation.
-		});
+		function createAnnotationPoint(drinkobj) {
+			var annotationPoint = Titanium.Map.createAnnotation({
+				latitude : drinkobj.latitude,
+				longitude : drinkobj.longitude,
+				title : "Appcelerator Headquarters",
+				subtitle : 'Mountain View, CA',
+				pincolor : Titanium.Map.ANNOTATION_RED,
+				animate : true,
+				leftButton : Titanium.UI.iPhone.SystemButton.INFO_LIGHT,
+				myid : 1 // Custom property to uniquely identify this annotation.
+			});
+
+			return annotationPoint;
+		};
+
+		for (var i = 0; i < data.length; i++) {
+			annotationPointArray[i] = new createAnnotationPoint(data[i]);
+		}
+
+		// var annotationPoint = Titanium.Map.createAnnotation({
+		// latitude : 43.645972,
+		// longitude : -79.399079,
+		// title : "Appcelerator Headquarters",
+		// subtitle : 'Mountain View, CA',
+		// pincolor : Titanium.Map.ANNOTATION_RED,
+		// animate : true,
+		// leftButton : Titanium.UI.iPhone.SystemButton.INFO_LIGHT,
+		// myid : 1 // Custom property to uniquely identify this annotation.
+		// });
 
 		var mapview = Titanium.Map.createView({
 			mapType : Titanium.Map.STANDARD_TYPE,
 			animate : true,
 			regionFit : true,
 			userLocation : true,
-			annotations : [mountainView]
+			annotations : annotationPointArray
 		});
 
 		var mapFocusPoint = {
@@ -66,8 +86,8 @@ var mapWindow = function(sourceID) {
 			mapview.setLocation(mapFocusPoint);
 		});
 
-		mountainView.addEventListener('click', function() {
-		});
+		// annotationPoint.addEventListener('click', function() {
+		// });
 
 		mapwin.add(mapview);
 		return mapwin;
@@ -98,7 +118,7 @@ var mapWindow = function(sourceID) {
 			// we use the above data the way we need it
 		});
 
-		var mountainView = Titanium.Map.createAnnotation({
+		var annotationPoint = Titanium.Map.createAnnotation({
 			latitude : sourceID.latitude,
 			longitude : sourceID.longitude,
 			title : sourceID.bar,
@@ -114,7 +134,7 @@ var mapWindow = function(sourceID) {
 			animate : true,
 			regionFit : true,
 			userLocation : true,
-			annotations : [mountainView]
+			annotations : [annotationPoint]
 		});
 
 		var mapFocusPoint = {
@@ -136,7 +156,7 @@ var mapWindow = function(sourceID) {
 			mapview.setLocation(mapFocusPoint);
 		});
 
-		mountainView.addEventListener('click', function() {
+		annotationPoint.addEventListener('click', function() {
 		});
 
 		mapwin.add(mapview);
