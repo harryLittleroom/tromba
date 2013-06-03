@@ -3,7 +3,6 @@ var Data = require('ui/common/DAL');
 
 function storyWindow(commonProperties) {
 	var data = Data.readTrombData('story');
-	console.log(data.description);
 	var self = new commonWindow();
 	self.index = 0;
 	self.backgroundColor = '#2b2b2b';

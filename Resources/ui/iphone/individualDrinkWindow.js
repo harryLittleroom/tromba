@@ -198,9 +198,16 @@ var individualDrinkWindow = function(sourceID) {
 		var facebookButton = new createButton('Facebook');
 		var twitterButton = new createButton('Twitter');
 		var cancelButton = new createButton('Cancel');
+		var mapBackButton = Ti.UI.createButton({
+			title : "Back",
+			style : Titanium.UI.iPhone.SystemButtonStyle.BORDERED
+		});
+		mapBackButton.addEventListener("click", function() {
+			mapWindow.close();
+		});
 
-		facebookButton.addEventListener('click', function(e) {		
-			facebookEvent(cmsUrl+sourceID.drinkfile);
+		facebookButton.addEventListener('click', function(e) {
+			facebookEvent(cmsUrl + sourceID.drinkfile);
 		});
 		socialView.add(facebookButton);
 		socialView.add(twitterButton);
@@ -214,6 +221,11 @@ var individualDrinkWindow = function(sourceID) {
 			navBarHidden : true,
 			backgroundColor : '#212121'
 		});
+
+		//var mapWindow = new commonWindow();
+		var mapWindow_ini = require('ui/iphone/mapWindow');
+		var mapWindow = new mapWindow_ini(sourceID);
+		mapWindow.setLeftNavButton(mapBackButton);
 
 		sharewindow.add(socialView);
 
@@ -229,6 +241,16 @@ var individualDrinkWindow = function(sourceID) {
 				modalStyle : Ti.UI.iPhone.MODAL_PRESENTATION_FORMSHEET
 			})
 		});
+
+		mapButton.addEventListener('click', function(e) {
+			console.log('click share button');
+			mapWindow.open({
+				modal : true,
+				modalTransitionStyle : Ti.UI.iPhone.MODAL_TRANSITION_STYLE_FLIP_HORIZONTAL,
+				modalStyle : Ti.UI.iPhone.MODAL_PRESENTATION_FORMSHEET
+			})
+		});
+
 		buttonView.add(mapButton);
 		buttonView.add(shareButton);
 		return buttonView;
