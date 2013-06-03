@@ -2,12 +2,10 @@ var commonWindow = require('ui/iphone/ApplicationWindow');
 var Data = require('ui/common/DAL');
 
 var individualDrinkWindow = function(sourceID) {
-	//var data = Data.readTrombData();
 	var newwin = new commonWindow();
 	newwin.backgroundColor = '#2b2b2b';
 	var self = Ti.UI.createView({
-		//height : scaleHeightByWidth('/images/iphoneImage/bartenderImage.jpg'),
-		layout:'vertical',
+		layout : 'vertical',
 		backgroundColor : '#2b2b2b'
 	});
 
@@ -22,8 +20,7 @@ var individualDrinkWindow = function(sourceID) {
 		var bartenderViewContainer = Ti.UI.createView({
 			width : '100%',
 			height : '140',
-			backgroundColor:'#2b2b2b',
-			//top:0,
+			backgroundColor : '#2b2b2b',
 		});
 		var bartenderImage = Ti.UI.createImageView({
 			height : 100,
@@ -37,7 +34,6 @@ var individualDrinkWindow = function(sourceID) {
 			right : labelContainerRight,
 			top : 20,
 			width : labelContainerWidth,
-			//backgroundColor : '#0a4b86',
 			layout : 'vertical',
 
 		});
@@ -73,7 +69,6 @@ var individualDrinkWindow = function(sourceID) {
 				fontSize : fontsziesmall,
 				fontFamily : fontFamilySmall
 			},
-			//backgroundColor:'green'
 		});
 
 		rightLabelView.add(bartenderNameLabel);
@@ -87,8 +82,7 @@ var individualDrinkWindow = function(sourceID) {
 	function addDrinkview() {
 		var drinkViewContainer = Ti.UI.createView({
 			width : '100%',
-			height : 'auto',
-			//top : 200,
+			height : Titanium.UI.SIZE,
 			backgroundColor : '#212121',
 		});
 		var drinkImage = Ti.UI.createImageView({
@@ -101,9 +95,10 @@ var individualDrinkWindow = function(sourceID) {
 		});
 		var drinkRightLabelView = Ti.UI.createView({
 			right : labelContainerRight,
-			top : 5,
+			top : 10,
 			width : labelContainerWidth,
-			//backgroundColor : '#0a4b86',
+			height : Titanium.UI.SIZE,
+			bottom : 10,
 			layout : 'vertical'
 		});
 		var drinkNameLabel = Ti.UI.createLabel({
@@ -116,7 +111,7 @@ var individualDrinkWindow = function(sourceID) {
 				fontSize : fontsziebig,
 				fontFamily : fontFamilySmall
 			}
-			
+
 		});
 		var ingredientLabel = Ti.UI.createLabel({
 			text : sourceID.ingredients,
@@ -147,16 +142,91 @@ var individualDrinkWindow = function(sourceID) {
 		drinkViewContainer.add(drinkImage);
 		drinkViewContainer.add(drinkRightLabelView);
 		return drinkViewContainer;
+	};
+
+	function addButtons() {
+		var buttonView = Ti.UI.createView({
+			width : '100%',
+			height : '140',
+			backgroundColor : '#323232',
+			layout : "vertical",
+			height : Titanium.UI.SIZE,
+		});
+
+		
+
+		function createButton(title) {
+			var button = Ti.UI.createButton({
+				title : title,
+				width : "90%",
+				height : '40',
+				top : 10,
+				style : Titanium.UI.iPhone.SystemButtonStyle.PLAIN,
+				borderRadius : 10,
+				font : {
+					fontSize : 20,
+					fontFamily : fontFamilySmall,
+					fontWeight : 'bold'
+				},
+				backgroundGradient : {
+					type : 'linear',
+					colors : ['#4c4c4c', '#2c2c2c'],
+					startPoint : {
+						x : 0,
+						y : 0
+					},
+					endPoint : {
+						x : 0,
+						y : 50
+					},
+					backFillStart : false
+				},
+				borderWidth : 1,
+				borderColor : '#010101'
+			});
+			
+			return button;
+		};
+
+		var shareButton = new createButton('Share');
+		var mapButton =  new createButton('Map');
+		
+		var cancelButton = new createButton('Cancel');
+		cancelButton.addEventListener('click',function(e){
+			sharewindow.close();
+		});
+		
+		var sharewindow = Titanium.UI.createWindow({
+			navBarHidden:true,
+			backgroundColor:'#212121'
+		});
+		
+		sharewindow.add(cancelButton);
+
+		mapButton.addEventListener('click', function(e) {
+			console.log('click map button');
+		});
+
+		shareButton.addEventListener('click', function(e) {
+			console.log('click share button');
+			sharewindow.open({
+				modal : true,
+				modalTransitionStyle : Ti.UI.iPhone.MODAL_TRANSITION_STYLE_FLIP_HORIZONTAL,
+				modalStyle : Ti.UI.iPhone.MODAL_PRESENTATION_FORMSHEET
+			})
+		});
+		buttonView.add(mapButton);
+		buttonView.add(shareButton);
+		return buttonView;
 	}
 
 	var scrollViewInside = new addScrollView();
-	scrollViewInside.height=platformHeight*0.5;
-	//scrollViewInside.layout = 'vertical';
 	var bartenderView = new addBartenderview();
 	var drinkview = new addDrinkview();
-	self.add(bartenderView);
-	self.add(drinkview);
-	scrollViewInside.add(self);
+	var buttonview = new addButtons();
+	scrollViewInside.add(bartenderView);
+	scrollViewInside.add(drinkview);
+	scrollViewInside.add(buttonview);
 	newwin.add(scrollViewInside);
 	return newwin;
 }

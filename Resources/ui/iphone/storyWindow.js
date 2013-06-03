@@ -22,7 +22,7 @@ function storyWindow(commonProperties) {
 	var descrptionView = Ti.UI.createLabel({
 		text : data[0].description,
 		textAlign : Ti.UI.TEXT_ALIGNMENT_CENTER,
-		top : getImageByFileName("/images/iphoneImage/our_story_topimage.png").height * platformWidth / getImageByFileName("/images/iphoneImage/our_story_topimage.png").width + titleView.height,
+		//top : getImageByFileName("/images/iphoneImage/our_story_topimage.png").height * platformWidth / getImageByFileName("/images/iphoneImage/our_story_topimage.png").width + titleView.height,
 		color : 'white',
 		font:{
 			fontSize:12,

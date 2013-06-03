@@ -55,17 +55,20 @@ if (Ti.version < 1.8) {
 				Data.getAppData('story', function(data) {
 					//console.log(data);
 					Data.storeData(data);
+					loadApplication();
 				});
 			}
-			function loadApplication(){};
-			var ApplicationTabGroup = require('ui/common/ApplicationTabGroup');
-			//	new ApplicationTabGroup(windowArray).open();
 
-			setTimeout(function() {
-				new ApplicationTabGroup(windowArray).open({
-					transition : Titanium.UI.iPhone.AnimationStyle.CURL_UP
-				});
-			}, 1000);
+			function loadApplication() {
+				var ApplicationTabGroup = require('ui/common/ApplicationTabGroup');
+				//	new ApplicationTabGroup(windowArray).open();
+
+				setTimeout(function() {
+					new ApplicationTabGroup(windowArray).open({
+						transition : Titanium.UI.iPhone.AnimationStyle.CURL_UP
+					});
+				}, 1000);
+			};
 
 		}
 	}

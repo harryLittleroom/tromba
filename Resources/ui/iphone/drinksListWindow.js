@@ -24,6 +24,9 @@ function drinksListWindow(navigroup) {
 			sourceID : data[i],
 			index : i
 		});
+		
+		if (i % 2 == 1)view.backgroundColor = '#212121';
+			
 
 		var fontsize = 14;
 		var leftposition = 149;
