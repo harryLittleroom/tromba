@@ -53,7 +53,11 @@ function drinkTypeWindow(commonProperties) {
 			text : title,
 			touchEnabled : false,
 			width : 200,
-			top : 10
+			top : 10,
+			font : {
+				fontSize : 22,
+				fontFamily : 'Mrs Eaves OT'
+			}
 		});
 
 		var rightLabel2 = Ti.UI.createLabel({
@@ -64,7 +68,7 @@ function drinkTypeWindow(commonProperties) {
 			width : 200,
 			top : 30,
 			font : {
-				fontSize : 12,
+				fontSize : 14,
 				fontFamily : 'Mrs Eaves OT'
 			}
 		});

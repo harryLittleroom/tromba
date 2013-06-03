@@ -21,19 +21,17 @@ function storyWindow(commonProperties) {
 
 	var descrptionView = Ti.UI.createLabel({
 		text : data[0].description,
-		textAlign : Ti.UI.TEXT_ALIGNMENT_CENTER,
-		//top : getImageByFileName("/images/iphoneImage/our_story_topimage.png").height * platformWidth / getImageByFileName("/images/iphoneImage/our_story_topimage.png").width + titleView.height,
+		textAlign : Ti.UI.TEXT_ALIGNMENT_LEFT,
+		left:10,
 		color : 'white',
 		font:{
-			fontSize:12,
+			fontSize:18,
 			fontFamily : 'Mrs Eaves OT'
 		}
 	})
 	scrollView.add(topImageView);
 	scrollView.add(descrptionView);
-	self.add(scrollView);
-	//self.add(topImageView);
-	
+	self.add(scrollView);	
 	return self;
 };
 

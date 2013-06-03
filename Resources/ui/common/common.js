@@ -142,3 +142,5 @@ var addTableView = function(targetWindow, navigationGroup, imageViewArray, label
 	targetWindow.add(table);
 
 }
+
+
