@@ -22,6 +22,7 @@ function storyWindow(commonProperties) {
 		text : data[0].description,
 		textAlign : Ti.UI.TEXT_ALIGNMENT_LEFT,
 		left:10,
+		top:15,
 		color : 'white',
 		font:{
 			fontSize:18,

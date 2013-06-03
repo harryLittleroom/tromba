@@ -104,7 +104,7 @@ var addTableView = function(targetWindow, navigationGroup, imageViewArray, label
 		separatorColor : 'transparent',
 	});
 	table.top = top;
-
+	var categoryArray = ['Feature','Toronto','Melbourne'];
 	for (var i = 0; i < imageViewArray.length; i++) {
 		var row = Ti.UI.createTableViewRow({
 			className : 'row',
@@ -112,6 +112,7 @@ var addTableView = function(targetWindow, navigationGroup, imageViewArray, label
 			touchEnabled : true,
 			height : 120,
 			backgroundColor : "#212121",
+			category:categoryArray[i]
 		});
 		if (i % 2 == 1)
 			row.backgroundColor = '#2b2b2b';
@@ -125,13 +126,14 @@ var addTableView = function(targetWindow, navigationGroup, imageViewArray, label
 
 	table.setData(tableData);
 
-	var drinklistwin_ini = require('/ui/iphone/drinksListWindow');
-	var drinklistwin = new drinklistwin_ini(navigationGroup);
-
 	// var emptyView = Titanium.UI.createView({});
 	// drinklistwin.leftNavButton = emptyView
 
 	table.addEventListener('click', function(e) {
+		console.log(e.row.category);
+		var category = e.row.category;
+		var drinklistwin_ini = require('/ui/iphone/drinksListWindow');
+		var drinklistwin = new drinklistwin_ini(navigationGroup, category);
 		if (e.source && e.source.objName !== 'table') {
 			navigationGroup.open(drinklistwin, {
 				animated : true

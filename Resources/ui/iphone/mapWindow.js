@@ -5,8 +5,10 @@ var mapWindow = function(sourceID) {
 	//var data = Data.readTrombData();
 	var data = Data.readTrombData('drinks');
 	//load the mapwindow by clicking the tab
+	
 	function loadbyTab() {
 		var mapwin = new commonWindow();
+		var titleView = addTitleBar('Find Tromba', mapwin);
 		var currentlongitude;
 		var currentlatitude;
 
@@ -34,11 +36,11 @@ var mapWindow = function(sourceID) {
 			var annotationPoint = Titanium.Map.createAnnotation({
 				latitude : drinkobj.latitude,
 				longitude : drinkobj.longitude,
-				title : "Appcelerator Headquarters",
-				subtitle : 'Mountain View, CA',
+				title : drinkobj.bar,
+				subtitle : drinkobj.location,
 				pincolor : Titanium.Map.ANNOTATION_RED,
 				animate : true,
-				leftButton : Titanium.UI.iPhone.SystemButton.INFO_LIGHT,
+				//leftButton : Titanium.UI.iPhone.SystemButton.INFO_LIGHT,
 				myid : 1 // Custom property to uniquely identify this annotation.
 			});
 
@@ -125,7 +127,7 @@ var mapWindow = function(sourceID) {
 			subtitle : sourceID.location,
 			pincolor : Titanium.Map.ANNOTATION_RED,
 			animate : true,
-			leftButton : Titanium.UI.iPhone.SystemButton.INFO_LIGHT,
+			//leftButton : Titanium.UI.iPhone.SystemButton.INFO_LIGHT,
 			myid : 1 // Custom property to uniquely identify this annotation.
 		});
 

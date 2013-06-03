@@ -66,7 +66,7 @@ function drinkTypeWindow(commonProperties) {
 			text : description,
 			touchEnabled : false,
 			width : 200,
-			top : 30,
+			top : 40,
 			font : {
 				fontSize : 14,
 				fontFamily : 'Mrs Eaves OT'
