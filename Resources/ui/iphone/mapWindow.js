@@ -6,9 +6,6 @@ var mapWindow = function(sourceID) {
 
 	//load the mapwindow by clicking the tab
 	function loadbyTab() {
-
-		console.log('mapwindow');
-		console.log(sourceID);
 		var mapwin = new commonWindow();
 		var currentlongitude;
 		var currentlatitude;
@@ -51,22 +48,22 @@ var mapWindow = function(sourceID) {
 			annotations : [mountainView]
 		});
 
-		var boston = {
+		var mapFocusPoint = {
 			latitude : currentlatitude,
 			longitude : currentlongitude,
 			latitudeDelta : 0.010,
 			longitudeDelta : 0.018
 		};
-		mapview.setLocation(boston);
+		mapview.setLocation(mapFocusPoint);
 
 		mapwin.addEventListener('open', function(e) {
-			var boston = {
+			var mapFocusPoint = {
 				latitude : currentlatitude,
 				longitude : currentlongitude,
 				latitudeDelta : 0.010,
 				longitudeDelta : 0.018
 			};
-			mapview.setLocation(boston);
+			mapview.setLocation(mapFocusPoint);
 		});
 
 		mountainView.addEventListener('click', function() {
@@ -77,8 +74,7 @@ var mapWindow = function(sourceID) {
 	};
 	//load the mapwindow by clicking the button
 	function loadByButton() {
-		console.log('mapwindow');
-		console.log(sourceID);
+
 		var mapwin = new commonWindow();
 		var currentlongitude;
 		var currentlatitude;
@@ -121,22 +117,23 @@ var mapWindow = function(sourceID) {
 			annotations : [mountainView]
 		});
 
-		var boston = {
+		var mapFocusPoint = {
 			latitude : currentlatitude,
 			longitude : currentlongitude,
 			latitudeDelta : 0.010,
 			longitudeDelta : 0.018
 		};
-		mapview.setLocation(boston);
+		mapview.setLocation(mapFocusPoint);
 
 		mapwin.addEventListener('open', function(e) {
-			var boston = {
+
+			var mapFocusPoint = {
 				latitude : sourceID.latitude,
 				longitude : sourceID.longitude,
 				latitudeDelta : 0.010,
 				longitudeDelta : 0.018
 			};
-			mapview.setLocation(boston);
+			mapview.setLocation(mapFocusPoint);
 		});
 
 		mountainView.addEventListener('click', function() {
@@ -145,14 +142,13 @@ var mapWindow = function(sourceID) {
 		mapwin.add(mapview);
 		return mapwin;
 	}
-	
-	if(sourceID){
+
+	if (sourceID) {
 		mapwin = new loadByButton();
-	}
-	else{
+	} else {
 		mapwin = new loadbyTab();
 	}
-	
+
 	return mapwin;
 }
 module.exports = mapWindow;
