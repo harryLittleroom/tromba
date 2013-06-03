@@ -4,10 +4,10 @@ var Data = require('ui/common/DAL');
 function glossaryWindow() {
 	var data = Data.readTrombData('glossary');
 	var self = new commonWindow();
-	//var term = ['Bananas', 'Strawberries', 'Mangos', 'Grapes'];
-	var description = ['look like a d', 'look like a o', 'look like a long o', 'look like a small o'];
+	var titleView = addTitleBar('Glossary Term', self);
+	description=['Tromba'];
 	var descriptionText = Ti.UI.createLabel({
-		top:0,
+		top:titleView.height+30,
 		text:description[0],
 		color:'white',
 	});
