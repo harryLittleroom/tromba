@@ -1,1 +1,0 @@
-/Users/Harry/Documents/Titanium_Studio_Workspace/tromba/Resources/ui/iphone/individualDrinkWindow.js

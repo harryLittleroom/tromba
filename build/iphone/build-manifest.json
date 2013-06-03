@@ -1,7 +1,9 @@
 {
-	"target": "simulator",
-	"deployType": "development",
-	"deviceFamily": "iphone",
+	"target": "device",
+	"deployType": "test",
+	"deviceFamily": "universal",
+	"developerName": "yuanfeng feng (L76ZFFQDAJ)",
+	"distributionName": "yuanfeng feng (L76ZFFQDAJ)",
 	"iosSdkPath": "/Users/Harry/Library/Application Support/Titanium/mobilesdk/osx/3.0.2.GA/iphone",
 	"appGuid": "6eeae856-a977-421c-a5cf-82c222f14201",
 	"tiCoreHash": "fa476584d63923183b326150e75416b3",
@@ -16,7 +18,7 @@
 	"description": "not specified",
 	"copyright": "2013 by littleroominc-imac2",
 	"guid": "6eeae856-a977-421c-a5cf-82c222f14201",
-	"skipJSMinification": true,
+	"skipJSMinification": false,
 	"forceCopy": false,
 	"forceCopyAll": false
 }
