@@ -153,7 +153,7 @@ var individualDrinkWindow = function(sourceID) {
 			height : Titanium.UI.SIZE,
 		});
 
-		function createButton(title,top) {
+		function createButton(title, top) {
 			var button = Ti.UI.createButton({
 				title : title,
 				width : "90%",
@@ -182,14 +182,15 @@ var individualDrinkWindow = function(sourceID) {
 				borderWidth : 1,
 				borderColor : '#010101'
 			});
-			if(top)button.top=top;
+			if (top)
+				button.top = top;
 			return button;
 		};
-		
+
 		var socialView = Ti.UI.createView({
-			width:'100%',
-			height:Titanium.UI.SIZE,
-			layout:'vertical'
+			width : '100%',
+			height : Titanium.UI.SIZE,
+			layout : 'vertical'
 		})
 		var shareButton = new createButton('Share');
 		var mapButton = new createButton('Map');
@@ -197,6 +198,10 @@ var individualDrinkWindow = function(sourceID) {
 		var facebookButton = new createButton('Facebook');
 		var twitterButton = new createButton('Twitter');
 		var cancelButton = new createButton('Cancel');
+
+		facebookButton.addEventListener('click', function(e) {		
+			facebookEvent(cmsUrl+sourceID.drinkfile);
+		});
 		socialView.add(facebookButton);
 		socialView.add(twitterButton);
 		socialView.add(cancelButton);

@@ -92,7 +92,7 @@ var addTitleBar = function(title, targetWindow) {
 	targetWindow.add(titleView);
 	return titleView;
 }
-var addTableView = function(targetWindow, navigationGroup, imageViewArray, labelViewArray,top) {
+var addTableView = function(targetWindow, navigationGroup, imageViewArray, labelViewArray, top) {
 
 	var tableData = [];
 
@@ -127,9 +127,9 @@ var addTableView = function(targetWindow, navigationGroup, imageViewArray, label
 
 	var drinklistwin_ini = require('/ui/iphone/drinksListWindow');
 	var drinklistwin = new drinklistwin_ini(navigationGroup);
-	
+
 	// var emptyView = Titanium.UI.createView({});
-	// drinklistwin.leftNavButton = emptyView 
+	// drinklistwin.leftNavButton = emptyView
 
 	table.addEventListener('click', function(e) {
 		if (e.source && e.source.objName !== 'table') {
@@ -141,6 +141,22 @@ var addTableView = function(targetWindow, navigationGroup, imageViewArray, label
 
 	targetWindow.add(table);
 
-}
+};
 
+var facebookEvent = function(imageUrl) {
+	Ti.Facebook.appid = '234930539978070';
+	Ti.Facebook.permissions = ['publish_stream'];
+	Ti.Facebook.authorize();
+
+	var data = {
+		link : "http://www.tequilatromba.com/",
+		name : "Tromba Mobile",
+		message : "Find out more awesome bartender with Tromba Mobile",
+		caption : "Tromba Mobile",
+		picture : imageUrl,
+		description : "To find out more recipe, please click here to download the app"
+	};
+	Titanium.Facebook.dialog("feed", data, function(e) {
+	});
+}
 
