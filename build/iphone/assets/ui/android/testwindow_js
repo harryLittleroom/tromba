@@ -1,1 +1,0 @@
-function testwindow(){var i=Ti.UI.createWindow({title:"android window"});return i}module.exports=testwindow;

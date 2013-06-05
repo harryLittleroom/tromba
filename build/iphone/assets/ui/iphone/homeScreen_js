@@ -1,1 +1,0 @@
-function homeScreen(){var e=new commonWindow;return e.index=4,e.backgroundImage="/images/iphoneImage/splashScreen.jpg",e}var commonWindow=require("ui/iphone/ApplicationWindow");module.exports=homeScreen;
